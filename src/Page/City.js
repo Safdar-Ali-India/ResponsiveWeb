@@ -2,6 +2,7 @@
 
 
 import * as React from 'react';
+// import styles from "../css files/";
 import ImageList from '@mui/material/ImageList';
 import ImageListItem from '@mui/material/ImageListItem';
 import { Grid, Container, Box, Typography } from '@mui/material';
@@ -15,16 +16,17 @@ export default function City() {
         settick("true")
     }
     return (
-        <>
-
+       
+<>
             <Header />
-            <Box sx={{ width: '100%', display: 'flex', flexDirection: 'column', justifyContent: 'center', m: 2, alignItems: 'center' }}>
-
+            <Box sx={{ width: '100%', display: 'flex', flexDirection: 'column', justifyContent: 'center',  alignItems: 'center',backgroundColor: '#1B222F' }}>
+            
+         
                 <SearchBox />
 
 
 
-                <Container sx={{ width: '100%', display: 'flex', m: 2, }}>
+                <Container sx={{ width: '100%', display: 'flex', m: 2 }}>
 
                     <Grid container spacing={2} >
                     {itemData.map((value,idenx)=>(
@@ -35,7 +37,7 @@ export default function City() {
                                 alignItems: 'center', borderRadius: '8px', flexDirection: 'column'
                             }}>
                                 <Paper sx={{
-                                    backgroundImage: "url('https://images.unsplash.com/photo-1575936123452-b67c3203c357')",
+                                    backgroundImage: `url(${value.img})`,
                                     height: '160px',
                                     width: '100%',
 
@@ -46,7 +48,7 @@ export default function City() {
                                     alignItems: 'center',
                                     justifyContent: 'center'
                                 }} >
-                                    <Typography variant='subtitle1' gutterBottom>Image Name</Typography>
+                                    <Typography variant='h5' gutterBotto style={{color: '#fff', fontWeight: 'bold'}}>{value.title}</Typography>
                                 </Paper>
 
                                 {/* </Stack> */}
@@ -60,58 +62,74 @@ export default function City() {
 
                 </Container>
             </Box>
-
-        </>
+            </>
     );
 }
 
 const itemData = [
     {
-        img: 'https://images.unsplash.com/photo-1551963831-b3b1ca40c98e',
-        title: 'Breakfast',
+        img: '/image20@2x.png',
+        title: 'Madrid',
     },
     {
-        img: 'https://images.unsplash.com/photo-1551782450-a2132b4ba21d',
-        title: 'Burger',
+        img: '/image20@2x.png',
+        title: 'Madrid',
     },
     {
-        img: 'https://images.unsplash.com/photo-1522770179533-24471fcdba45',
-        title: 'Camera',
+        img: '/image21@2x.png',
+        title: 'Pekin',
     },
     {
-        img: 'https://images.unsplash.com/photo-1444418776041-9c7e33cc5a9c',
-        title: 'Coffee',
+        img: '/image20@2x.png',
+        title: 'Madrid',
     },
     {
-        img: 'https://images.unsplash.com/photo-1533827432537-70133748f5c8',
-        title: 'Hats',
+        img: '/image23@2x.png',
+        title: 'New York',
     },
     {
-        img: 'https://images.unsplash.com/photo-1558642452-9d2a7deb7f62',
-        title: 'Honey',
+        img: '/image24@2x.png',
+        title: 'Barselona',
     },
     {
-        img: 'https://images.unsplash.com/photo-1516802273409-68526ee1bdd6',
-        title: 'Basketball',
+        img: '/image26@2x.png',
+        title: 'Praha',
     },
     {
-        img: 'https://images.unsplash.com/photo-1518756131217-31eb79b20e8f',
-        title: 'Fern',
+        img: '/image23@2x.png',
+        title: 'New York',
     },
     {
-        img: 'https://images.unsplash.com/photo-1597645587822-e99fa5d45d25',
-        title: 'Mushrooms',
+        img: '/image27@2x.png',
+        title: 'London',
     },
     {
-        img: 'https://images.unsplash.com/photo-1567306301408-9b74779a11af',
-        title: 'Tomato basil',
+        img: '/image28@2x.png',
+        title: 'Los Angeles',
     },
     {
-        img: 'https://images.unsplash.com/photo-1471357674240-e1a485acb3e1',
-        title: 'Sea star',
+        img: '/image26@2x.png',
+        title: 'London',
     },
     {
-        img: 'https://images.unsplash.com/photo-1589118949245-7d38baf380d6',
-        title: 'Bike',
+        img: '/image26@2x.png',
+        title: 'London',
     },
+    {
+        img: '/image27@2x.png',
+        title: 'London',
+    },
+    {
+        img: '/image6@2x.png',
+        title: 'Paris',
+    },
+    {
+        img: '/image21@2x.png',
+        title: 'Tokyo',
+    },
+    {
+        img: '/image27@2x.png',
+        title: 'Paris',
+    }
+     
 ];

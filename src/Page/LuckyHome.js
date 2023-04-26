@@ -64,7 +64,7 @@ export default function LuckyHome() {
         <>
             <Box>
                 <Header />
-                <Box sx={{ width: '100%', height: "100px", backgroundColor: "#00ffff" }}>
+                <Box sx={{ width: '100%', height: "100px",  backgroundColor: '#000'}}>
                     <h1>image</h1>
                 </Box>
                 {/* <Container sx={{  backgroundColor: "#ff0000" }}> */}
