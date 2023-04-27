@@ -20,7 +20,7 @@ const Singup = () => {
                         justifyContent: 'center',
                         alignItems: 'center'
                     }}>
-                        <Typography variant='h5'>
+                        <Typography variant='h3' sx={{ mb:3 }}>
                             Welcome! How do you to get started?
                         </Typography>
                         <Button variant="contained" sx={{ width: '300px', }} startIcon={<FacebookIcon />} size="large">
