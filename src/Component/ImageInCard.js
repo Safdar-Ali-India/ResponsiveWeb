@@ -36,10 +36,9 @@ const ImageInCard = () => {
                 backgroundImage: "url('https://images.unsplash.com/photo-1575936123452-b67c3203c357')",
                 height:'160px',
                 width:'100%',
-
-            backgroundRepeat:'no-repeat',
-            backgroundSize: 'cover',
-            aspectRatio:'1/1'
+                backgroundRepeat:'no-repeat',
+                backgroundSize: 'cover',
+                aspectRatio:'1/1'
             }}/>
 
             {/* </Stack> */}

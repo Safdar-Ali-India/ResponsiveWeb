@@ -1,43 +1,31 @@
 // import React from 'react'
 import Header from '../Component/Header'
 import img from '../asset/titleimage@2x.png'
-// import Stack from '@mui/material/Stack';
-
-
-// const LuckyHome = () => {
-//   return (
-//     <>
-//     <Stack direction="row" spacing={2}>
-
-
-//     </Stack>
-
-//     </>
-//   )
-// }
-
-// export default 
-
-
 import * as React from 'react';
-import Grid from '@mui/material/Grid';
-import FormLabel from '@mui/material/FormLabel';
-import Container from '@mui/material/Container';
-import FormControl from '@mui/material/FormControl';
-import FormControlLabel from '@mui/material/FormControlLabel';
-// import HighlightedCode from 'docs/src/modules/components/HighlightedCode';
-import RadioGroup from '@mui/material/RadioGroup';
-import Radio from '@mui/material/Radio';
-import Paper from '@mui/material/Paper';
-import BackGroundImg from '../Component/BackGroundImg';
-import Box from '@mui/material/Box';
-import Typography from '@mui/material/Typography';
-import SearchBox from '../Component/SearchBox';
-import { styled } from '@mui/material/styles';
 import ImageInCard from '../Component/ImageInCard';
+import SearchBox from '../Component/SearchBox';
 import Imageee from '../asset/final-lucky-dodo-var01@2x.png'
-import { Stack } from '@mui/material';
-// import img from '../asset/group-16865520576@2x.png'
+import image1 from '../asset/unsplashwh8lh2qzzs@2x.png'
+import BackGroundImg from '../Component/BackGroundImg';
+import PopUp from '../Component/PopUp';
+import{
+    Grid,
+    Box,
+    Paper,
+    Typography,
+    RadioGroup,
+    Container,
+    FormLabel,
+    Stack,
+    styled,
+    FormControl,
+    Radio,
+    FormControlLabel
+} from '@mui/material';
+
+
+import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos';
+
 
 
 
@@ -50,77 +38,149 @@ const StyledPaper = styled(Paper)({
 
 export default function LuckyHome() {
     const [spacing, setSpacing] = React.useState(2);
-
     const handleChange = (event) => {
         setSpacing(Number(event.target.value));
     };
+    const jsx = `<Grid container spacing={${spacing}}>`;
+    
+    // ======popup=============
+    
+    const [open, setOpen] = React.useState(false);
+    const [callpopup, setcallpopup] = React.useState(false);
+    const [scroll, setScroll] = React.useState('paper');
+    
+    const handleClickOpen = (scrollType) => () => {
+        setOpen(true);
+        setScroll(scrollType);
+    };
+    const handleCliak = ()=>{
+        console.log("888888888888");
+        setcallpopup(!callpopup)
+    }
 
-    const jsx = `
-<Grid container spacing={${spacing}}>
-`;
+    // ===========end popup=======
 
     return (
 
         <>
             <Box>
                 <Header />
-                <Box sx={{ width: '100%', height: "100px",  backgroundColor: '#000'}}>
-                    <h1>image</h1>
+                <Box sx={{ width: '100%', height: "150px", backgroundColor: '#000' ,display: 'flex',
+                                alignItems: 'center',flexDirection: 'column'}}>
+                <Paper sx={{
+                                    backgroundImage: `url(${image1})`,
+                                    height: '160px',
+                                    width: '100%',
+
+                                    backgroundRepeat: 'no-repeat',
+                                    backgroundSize: 'cover',
+                                    aspectRatio: '1/1',
+                                    display: 'flex',
+                                    alignItems: 'center',
+                                    justifyContent: 'center'
+                                }} >
+                    <Typography variant='h4' sx={{
+                        color: '#FFFFFF', fontFamily: 'Open Sans',
+                        fontStyle: 'normal',
+                        fontWeight: '700',
+                        fontSize: '40px',
+                        lineHeight: '110%'
+                    }}
+                    gutterBotto 
+                    
+                     >
+                        Events & Things in New York
+                    </Typography>
+                    </Paper>
                 </Box>
                 {/* <Container sx={{  backgroundColor: "#ff0000" }}> */}
-                <Box sx={{my:'2',}}>
-                <Box sx={{
-                     my:'2',
-                    width: '100%',
-                    height: "auto",
-                    display: 'flex',
-                    justifyContent: 'center'
-                }}>
-                    <SearchBox />
-                </Box>
-                <Stack sx={{mx:3}}>
+                <Box sx={{ my: '2', backgroundColor: '#1B2330' }}>
+                    <Box sx={{
+                        my: '2',
+                        width: '100%',
+                        height: "auto",
+                        display: 'flex',
+                        justifyContent: 'center',
+                        p:2,
+                    }}>
+                        <SearchBox />
+                    </Box>
 
-                <Typography variant='h5' gutterBottom sx={{ml:1}}>Sew Again  </Typography>
-                    <Grid container spacing={2} >
+                    <Stack sx={{ mx: 3 }}>
+                        <Typography variant='h5' gutterBottom sx={{
+                            ml: 1, fontFamily: 'Roboto', fontStyle: 'normal',
+                            fontWeight: '700', fontSize: '20px', lineHeight: '32px', color: '#FFFFFF'
+                        }} onClick={handleCliak}>
+                            Sew Again
+                            <ArrowForwardIosIcon />
+                        </Typography>
+                        <Grid container spacing={2} >
+                            <ImageInCard />
+                            <ImageInCard />
+                            <ImageInCard />
+                            <ImageInCard />
+                        </Grid>
+                    </Stack>
 
-                        <ImageInCard />
-                        <ImageInCard />
-                        <ImageInCard />
-                        <ImageInCard />
-                        {/* <ImageInCard /> */}
+                    <Stack sx={{ mx: 3 }}>
+                        <Typography variant='h5' gutterBottom sx={{
+                            ml: 1, fontFamily: 'Roboto', fontStyle: 'normal',
+                            fontWeight: '700', fontSize: '20px', lineHeight: '32px', color: '#FFFFFF'
+                        }}
+                        onClick={handleCliak}
+                        >
+                            Top 10 in your country
+                            <ArrowForwardIosIcon />
+                        </Typography>
+                        <Grid container spacing={2} >
+                            <ImageInCard />
+                            <ImageInCard />
+                            <ImageInCard />
+                            <ImageInCard />
+                        </Grid>
+                    </Stack>
 
-                    </Grid>
-                </Stack>
-                <Stack sx={{m:3}}>
+                    <Stack sx={{ m: 3 }}>
+                        <Typography variant='h5' gutterBottom sx={{
+                            ml: 1, fontFamily: 'Roboto', fontStyle: 'normal',
+                            fontWeight: '700', fontSize: '20px', lineHeight: '32px', color: '#FFFFFF'
+                        }}>
+                            Sew Again
+                            <ArrowForwardIosIcon />
+                        </Typography>
+                        <Grid container spacing={2} >
+                            <ImageInCard />
+                            <ImageInCard />
+                            <ImageInCard />
+                            <ImageInCard />
+                        </Grid>
+                    </Stack>
 
-                <Typography variant='h5' gutterBottom sx={{ml:1}}>Sew Again  </Typography>
-                    <Grid container spacing={2} >
+                    <Stack sx={{ m: 3 }}>
+                        <Typography variant='h5' gutterBottom sx={{
+                            ml: 1, fontFamily: 'Roboto', fontStyle: 'normal',
+                            fontWeight: '700', fontSize: '20px', lineHeight: '32px', color: '#FFFFFF'
+                        }}>
+                            Sew Again
+                            <ArrowForwardIosIcon sx={{ pt: '-6' }} />
+                        </Typography>
+                        <Grid container spacing={2} >
+                            <ImageInCard />
+                            <ImageInCard />
+                            <ImageInCard />
+                            <ImageInCard />
+                            <ImageInCard />
 
-                        <ImageInCard />
-                        <ImageInCard />
-                        <ImageInCard />
-                        <ImageInCard />
-                        {/* <ImageInCard /> */}
+                        </Grid>
+                    </Stack>
 
-                    </Grid>
-                </Stack>
-                <Stack sx={{m:3}}>
-
-                <Typography variant='h5' gutterBottom sx={{ml:1}}>Sew Again  </Typography>
-                    <Grid container spacing={2} >
-
-                        <ImageInCard />
-                        <ImageInCard />
-                        <ImageInCard />
-                        <ImageInCard />
-                        <ImageInCard />
-
-                    </Grid>
-                </Stack>
                 </Box>
                 {/* </Container> */}
 
-
+                        {
+                            callpopup && <PopUp data={callpopup} setcallpopup={setcallpopup}   />
+                        }
+                       
             </Box>
         </>
 
