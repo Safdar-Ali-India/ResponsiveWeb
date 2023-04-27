@@ -164,7 +164,8 @@ function Header() {
           />
         </div>
    
-         
+       
+        
   <Stack
     spacing={2}
     direction="row"
@@ -178,10 +179,14 @@ function Header() {
       justifyContent: "flex-end", color: "black"
     }}
   >
-    <Button variant="outlined" sx={{ color: "white", borderColor: "white" }}>
+    <Button variant="outlined" sx={{ color: "white", borderColor: "white" ,"&:hover": {
+      color: "black",
+      borderColor: "black"
+    }}}>
       Create a Team
     </Button>
   </Stack>
+          
  
   
      
