@@ -27,19 +27,18 @@ const ImageInCard = () => {
     return (
         <>
         
-        <Grid item xs={12} sm={4} md={3}  onClick={handleOpen}>
+        <Grid item xs={6} sm={4} md={3}  onClick={handleOpen}>
 
-            <Box sx={{boxShadow:"0px 6px 12px rgba(0, 0, 0, 0.08), 0px 1px 3px rgba(0, 0, 0, 0.1)",m:1, display:'flex' ,
+            <Box sx={{boxShadow:"0px 6px 12px rgba(0, 0, 0, 0.08), 0px 1px 3px rgba(0, 0, 0, 0.1)",my:1,mx:'4px', display:'flex' ,
                borderRadius:'8px', flexDirection:'column'}}>
             {/* <Stack   > */}
             <Box sx={{
                 backgroundImage: "url('https://images.unsplash.com/photo-1575936123452-b67c3203c357')",
                 height:'160px',
                 width:'100%',
-
-            backgroundRepeat:'no-repeat',
-            backgroundSize: 'cover',
-            aspectRatio:'1/1'
+                backgroundRepeat:'no-repeat',
+                backgroundSize: 'cover',
+                aspectRatio:'1/1'
             }}/>
 
             {/* </Stack> */}
