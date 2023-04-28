@@ -1,0 +1,28 @@
+label {
+    font-weight: bold;
+  }
+  
+  input,
+  select {
+    border: 1px solid #ccc;
+    padding: 8px;
+    border-radius: 4px;
+  }
+  @media only screen and (max-width: 600px) {
+    .form-container {
+      max-width: 100%;
+      padding: 0 16px;
+    }
+  
+    label {
+      display: block;
+      margin-bottom: 8px;
+    }
+  
+    input,
+    select {
+      display: block;
+      width: 100%;
+      margin-bottom: 16px;
+    }
+  }
