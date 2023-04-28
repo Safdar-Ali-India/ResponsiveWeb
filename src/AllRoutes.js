@@ -6,6 +6,7 @@ import City from './Page/City'
 import Signup from './Page/Signup'
 import Register from './Page/Register'
 import Explore from './Page/Explore'
+import EnterYourCode from './Page/EnterYourCode'
 
 const AllRoutes = () => {
   return (
@@ -18,6 +19,7 @@ const AllRoutes = () => {
       <Route path="/register" element={<Register />} />
       {/* <Route path="/signup" element={<Singup />} /> */}
       <Route path="/explore" element={<Explore />} />
+      <Route path="/enter-your-code" element={<EnterYourCode />} />
     </Routes>
   )
 }
