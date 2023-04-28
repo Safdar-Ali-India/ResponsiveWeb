@@ -3,6 +3,7 @@ import { Route, Routes } from "react-router-dom"
 import LuckyHome from './Page/LuckyHome'
 import City from './Page/City'
 import Singup from './Page/Singup'
+import Explore from './Page/Explore'
 
 const AllRoutes = () => {
   return (
