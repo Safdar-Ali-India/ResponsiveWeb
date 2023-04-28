@@ -38,18 +38,21 @@ const Explore = () => {
                     </Grid>
                     <Grid item xs={12} sm={6} md={8} sx={{backgroundColor:'#1B2330'  }}>
                         <Grid container sx={{  }} spacing={2}>
-                            {LeftSideArrayData.map((val,id)=>(
+                            {RightSideArrayData.map((val,id)=>(
 
                             <Grid item xs={12} sm={6} md={3} sx={{backgroundColor:'#1B2330',color:'#ffffff'  }} > 
                            
                                 <Typography variant='h6' sx={{lineHeight:'20px',fontSize:'16px',fontWeight:'700'}}>hello</Typography>
-                                <Divider sx={{width: '1px',color:'#ffffff'}} />
-                                <Typography variant='subtitle2' sx={{lineHeight:'20px',fontSize:'12px',fontWeight:'600',opacity:'0.6'}}>vxvjd</Typography>
-                                <Typography variant='subtitle2' sx={{lineHeight:'20px',fontSize:'12px',fontWeight:'600',opacity:'0.6'}}>vxvjd</Typography>
-                                <Typography variant='subtitle2' sx={{lineHeight:'20px',fontSize:'12px',fontWeight:'600',opacity:'0.6'}}>vxvjd</Typography>
-                                <Typography variant='subtitle2' sx={{lineHeight:'20px',fontSize:'12px',fontWeight:'600',opacity:'0.6'}}>vxvjd</Typography>
-                                <Typography variant='subtitle2' sx={{lineHeight:'20px',fontSize:'12px',fontWeight:'600',opacity:'0.6'}}>vxvjd</Typography>
-                                <Typography variant='subtitle2' sx={{lineHeight:'20px',fontSize:'12px',fontWeight:'600',opacity:'0.6'}}>vxvjd</Typography>
+                                <List  component="nav" aria-label="mailbox folders">
+
+                                <hr sx={{color:'#ffffff' ,width:'1px' }}   />
+                                </List>
+                                <Typography variant='subtitle2' sx={{lineHeight:'20px',fontSize:'12px',fontWeight:'600',opacity:'0.6'}}>{val}</Typography>
+                                <Typography variant='subtitle2' sx={{lineHeight:'20px',fontSize:'12px',fontWeight:'600',opacity:'0.6'}}>{val}</Typography>
+                                <Typography variant='subtitle2' sx={{lineHeight:'20px',fontSize:'12px',fontWeight:'600',opacity:'0.6'}}>{val}</Typography>
+                                <Typography variant='subtitle2' sx={{lineHeight:'20px',fontSize:'12px',fontWeight:'600',opacity:'0.6'}}>{val}</Typography>
+                                <Typography variant='subtitle2' sx={{lineHeight:'20px',fontSize:'12px',fontWeight:'600',opacity:'0.6'}}>{val}</Typography>
+                                <Typography variant='subtitle2' sx={{lineHeight:'20px',fontSize:'12px',fontWeight:'600',opacity:'0.6'}}>{val}</Typography>
                             
 
                             </Grid>
@@ -95,6 +98,24 @@ const LeftSideArrayData = [
     'Lorem imput',
     'Lorem imput',
     'Lorem imput',
+]
+const RightSideArrayData = [
+    'Lorem imput Lorem imput',
+    'Lorem imput Lorem imput',
+    'Lorem imput',
+    
+    'Lorem imputLorem imput',
+    'Lorem imput',
+    'Lorem imputLorem imput',
+    'Lorem imput',
+   
+    'Lorem imputLorem imput',
+    'Lorem imput',
+    
+    'Lorem imputLorem imput',
+    'Lorem imput',
+    'Lorem imputLorem imput',
+    
 ]
 
 

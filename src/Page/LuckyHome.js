@@ -8,6 +8,7 @@ import Imageee from "../asset/final-lucky-dodo-var01@2x.png";
 import image1 from "../asset/unsplashwh8lh2qzzs@2x.png";
 import BackGroundImg from "../Component/BackGroundImg";
 import PopUp from "../Component/PopUp";
+import { useMediaQuery } from "@mui/material";
 import {
   Grid,
   Box,
@@ -33,6 +34,7 @@ const StyledPaper = styled(Paper)({
 });
 
 export default function LuckyHome() {
+    const isMobile = useMediaQuery("(max-width: 600px)");
   const [spacing, setSpacing] = React.useState(2);
   const handleChange = (event) => {
     setSpacing(Number(event.target.value));
@@ -132,7 +134,7 @@ export default function LuckyHome() {
               Sew Again
               <ArrowForwardIosIcon />
             </Typography>
-            <Grid container spacing={2}>
+            <Grid container spacing={1}>
               <ImageInCard />
               <ImageInCard />
               <ImageInCard />
@@ -217,9 +219,15 @@ export default function LuckyHome() {
             </Grid>
           </Stack>
         </Box>
+        <Box>
+      {isMobile ? (
+        <Box>Mobile content</Box>
+      ) :  callpopup && <PopUp data={callpopup} setcallpopup={setcallpopup} />
+      }
+    </Box>
+        {/* {callpopup && <PopUp data={callpopup} setcallpopup={setcallpopup} />} */}
         {/* </Container> */}
 
-        {callpopup && <PopUp data={callpopup} setcallpopup={setcallpopup} />}
       </Box>
     </>
   );

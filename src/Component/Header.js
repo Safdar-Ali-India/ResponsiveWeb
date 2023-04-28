@@ -1,27 +1,71 @@
 import * as React from 'react';
 import Stack from '@mui/material/Stack';
 // import Button from '@mui/material/Button';
-import AppBar from '@mui/material/AppBar';
-import Box from '@mui/material/Box';
-import Toolbar from '@mui/material/Toolbar';
-import IconButton from '@mui/material/IconButton';
-import Typography from '@mui/material/Typography';
-import Menu from '@mui/material/Menu';
-import MenuIcon from '@mui/icons-material/Menu';
-import Container from '@mui/material/Container';
-import Avatar from '@mui/material/Avatar';
-import Button from '@mui/material/Button';
-import Tooltip from '@mui/material/Tooltip';
-import MenuItem from '@mui/material/MenuItem';
-import AdbIcon from '@mui/icons-material/Adb';
+
+import {
+  AppBar,
+  Toolbar,
+  Box,
+  Button,
+  Container,
+  Tooltip,
+  MenuItem,
+  
+
+} from '@mui/material';
+import { useMediaQuery } from "@mui/material";
+
+import DroupDown from './DroupDown';
 import MenuforHeader from './MenuforHeader';
 import SettingsTwoToneIcon from '@mui/icons-material/SettingsTwoTone';
 import FavoriteBorderTwoToneIcon from '@mui/icons-material/FavoriteBorderTwoTone';
 
-const pages = ['Products', 'Pricing', 'Blog'];
+
+import IconButton from '@mui/material/IconButton';
+import Typography from '@mui/material/Typography';
+import Menu from '@mui/material/Menu';
+import MenuIcon from '@mui/icons-material/Menu';
+import Avatar from '@mui/material/Avatar';
+import AdbIcon from '@mui/icons-material/Adb';
+import SwipeableTemporaryDrawer from './Drawer/LeftDrawer';
+
+
+import SwipeableDrawer from '@mui/material/SwipeableDrawer';
+import List from '@mui/material/List';
+import Divider from '@mui/material/Divider';
+import ListItem from '@mui/material/ListItem';
+import ListItemButton from '@mui/material/ListItemButton';
+import ListItemIcon from '@mui/material/ListItemIcon';
+import ListItemText from '@mui/material/ListItemText';
+import InboxIcon from '@mui/icons-material/MoveToInbox';
+import MailIcon from '@mui/icons-material/Mail';
+
+
 const settings = ['Profile', 'Account', 'Dashboard', 'Logout'];
 
+const pages = [
+  {
+    type: "DropDown",
+    name: "New York",
+    city: ["Delhi", "Banglore", "Bihar"]
+  },
+  {
+    type: "DropDown",
+    name: "Explor",
+    city: ["Delhi", "Banglore", "Bihar"]
+  },
+  {
+    type: "Button",
+    name: "Create Team"
+  }
+];
+
+
+
 function Header() {
+
+  const isMobile = useMediaQuery("(max-width: 600px)");
+
   const [anchorElNav, setAnchorElNav] = React.useState(null);
   const [anchorElUser, setAnchorElUser] = React.useState(null);
 
@@ -40,11 +84,70 @@ function Header() {
     setAnchorElUser(null);
   };
 
+  // ===============
+  const [state, setState] = React.useState({
+    top: false,
+    left: false,
+    bottom: false,
+    right: false,
+  });
+
+  const toggleDrawer = (anchor, open) => (event) => {
+    console.log("--------------------");
+    if (
+      event &&
+      event.type === 'keydown' &&
+      (event.key === 'Tab' || event.key === 'Shift')
+    ) {
+      return;
+    }
+
+    setState({ ...state, [anchor]: open });
+  };
+
+  const list = (anchor) => (
+    <Box
+      sx={{ width: anchor === 'top' || anchor === 'bottom' ? 'auto' : 250 }}
+      role="presentation"
+      onClick={toggleDrawer(anchor, false)}
+      onKeyDown={toggleDrawer(anchor, false)}
+    >
+      <List>
+        {['Inbox', 'Starred', 'Send email', 'Drafts'].map((text, index) => (
+          <ListItem key={text} disablePadding>
+            <ListItemButton>
+              <ListItemIcon>
+                {index % 2 === 0 ? <InboxIcon /> : <MailIcon />}
+              </ListItemIcon>
+              <ListItemText primary={text} />
+            </ListItemButton>
+          </ListItem>
+        ))}
+      </List>
+      <Divider />
+      <List>
+        {['All mail', 'Trash', 'Spam'].map((text, index) => (
+          <ListItem key={text} disablePadding>
+            <ListItemButton>
+              <ListItemIcon>
+                {index % 2 === 0 ? <InboxIcon /> : <MailIcon />}
+              </ListItemIcon>
+              <ListItemText primary={text} />
+            </ListItemButton>
+          </ListItem>
+        ))}
+      </List>
+    </Box>
+  );
+
+
+
+
   return (
     <AppBar position="static">
       <Container maxWidth="xl" sx={{ backgroundColor: '#1B2330' }}>
         <Toolbar disableGutters>
-          {/* <AdbIcon sx={{ display: { xs: 'none', md: 'flex' }, mr: 1 }} />
+          <AdbIcon sx={{ display: { xs: 'none', md: 'flex' }, mr: 1 }} />
           <Typography
             variant="h6"
             noWrap
@@ -61,51 +164,21 @@ function Header() {
             }}
           >
             LOGO
-          </Typography> */}
-          <div style={{
-            position: 'absolute',
-            top: 0,
-            left: '38px',
-            width: '156px',
-            height: '58px',
-          }}>
-            <img
-              style={{
-                position: 'absolute',
-                top: '2px',
-                left: '56px',
-                width: '100px',
-                height: '56px',
-                objectFit: 'cover'
-              }}
-              alt=""
-              src="/final-lucky-dodo-var01@2x.png"
-            />
-            <img
-              style={{
-                position: 'absolute',
-                top: 0,
-                left: 0,
-                width: '98px',
-                height: '55px'
-              }}
-              alt=""
-              src="/final-lucky-dodo-var05@2x.png"
-            />
-          </div>
-          
+          </Typography>
+
           <Box sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' } }}>
             <IconButton
               size="large"
               aria-label="account of current user"
               aria-controls="menu-appbar"
               aria-haspopup="true"
-              onClick={handleOpenNavMenu}
+              onClick={ !isMobile ?
+                handleOpenNavMenu: toggleDrawer("left", true)}
               color="inherit"
             >
               <MenuIcon />
             </IconButton>
-            {/* <Menu
+            <Menu
               id="menu-appbar"
               anchorEl={anchorElNav}
               anchorOrigin={{
@@ -123,124 +196,59 @@ function Header() {
                 display: { xs: 'block', md: 'none' },
               }}
             >
-              <MenuforHeader page={pages} settings={settings} />
-              {
-                pages.map((page) => {
-                  return <MenuforHeader page={page} />
-                })
-                
+
+
+              {isMobile ? (
+                <React.Fragment key={"left"}>
+                {/* <Button onClick={toggleDrawer("left", true)}>{"left"}</Button> */}
+                <SwipeableDrawer
+                  anchor={"left"}
+                  open={state["left"]}
+                  onClose={toggleDrawer("left", false)}
+                  onOpen={toggleDrawer("left", true)}
+                >
+                  {list("left")}
+                </SwipeableDrawer>
+              </React.Fragment>
+              ) : pages.map((page) => (
+                <DroupDown page={page}/>
+              ))
               }
-            </Menu> */}
-          </Box>
-          <div style={{
-            position: 'absolute',
-  top: 0,
-  left: '38px',
-  width: '156px',
-  height: '58px',
-}}>
-          <img
-        style={{
-          position: 'absolute',
-          top: '2px',
-          left: '56px',
-          width: '100px',
-          height: '56px',
-          objectFit: 'cover'
-        }}
-            alt=""
-            src="/final-lucky-dodo-var01@2x.png"
-          />
-          <img
-            style={{
-              position: 'absolute',
-              top: 0,
-              left: 0,
-              width: '98px',
-              height: '55px'
-            }}
-            alt=""
-            src="/final-lucky-dodo-var05@2x.png"
-          />
-        </div>
-   
-       
-        
-  <Stack
-    spacing={2}
-    direction="row"
-    sx={{
-      display: "flex",
-      alignItems: "center",
-      marginLeft: "56px",
-      // marginRight: "132px",
-      color: "white",
-      flexGrow: 1,width:'1030px',
-      justifyContent: "flex-end", color: "black"
-    }}
-  >
-    <Button variant="outlined" sx={{ color: "white", borderColor: "white" ,"&:hover": {
-      color: "black",
-      borderColor: "black"
-    }}}>
-      Create a Team
-    </Button>
-  </Stack>
           
- 
-  
-     
- 
-
-
-          {/* <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }}>
-            {pages.map((page) => (
               
-              <MenuforHeader />
-            ))}
-           
-          </Box> */}
-<div style={{
-  background: 'linear-gradient(180deg, rgba(20, 20, 20, 0.5), rgba(20, 20, 20, 0))',
-  width: '100vw',
-  height: '58px',
-  textAlign: 'left',
-  fontSize: 'var(--button-normal-button-text-size)',
-  fontFamily: 'var(--font-open-sans)'
-}}>
-  <div  style={{
-  position: 'absolute',
-  top: 0,
-  left: 0,
-  backgroundColor: 'var(--color-gray-400)',
-  boxShadow: '0 4px 66px rgba(0, 0, 0, 0.25)',
-  width: '100%',
-  height: '60px'
-}}/>
+            </Menu>
+          </Box>
+          <AdbIcon sx={{ display: { xs: 'flex', md: 'none' }, mr: 1 }} />
+          <Typography
+            variant="h5"
+            noWrap
+            component="a"
+            href=""
+            sx={{
+              mr: 2,
+              display: { xs: 'flex', md: 'none' },
+              flexGrow: 1,
+              fontFamily: 'monospace',
+              fontWeight: 700,
+              letterSpacing: '.3rem',
+              color: 'inherit',
+              textDecoration: 'none',
+            }}
+          >
+            LOGO
+          </Typography>
+          <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }}>
+          {pages.map((page) => (
+                <DroupDown page={page}/>
+              ))}
+          </Box>
 
-  <div style={{
-  display: 'flex',
-  flexDirection: 'row',
-  position: 'absolute',
-  top: '12px',
-  left: '1290px',
-  width: '20px',
-  height: '34px'
-}}>
-    <Button>
-      <FavoriteBorderTwoToneIcon style={{color:'white'}} />
-    </Button>
-    <Button>
-      <SettingsTwoToneIcon style={{color:'white'}}/>
-    </Button>
-   
- 
-  </div>
-</div>
-
-          <Box sx={{ flexGrow: 0 , ml: 'auto'}}>
+          <Box sx={{ flexGrow: 0 }}>
             <Tooltip title="Open settings">
-              <IconButton onClick={handleOpenUserMenu} sx={{ p: 0 }}>
+              <IconButton
+              onClick={ !isMobile ?
+                handleOpenUserMenu: toggleDrawer("right", true)}
+               sx={{ p: 0 }}>
                 <Avatar alt="Remy Sharp" src="/static/images/avatar/2.jpg" />
               </IconButton>
             </Tooltip>
@@ -260,11 +268,27 @@ function Header() {
               open={Boolean(anchorElUser)}
               onClose={handleCloseUserMenu}
             >
-              {settings.map((setting) => (
+              {isMobile ? (
+                <React.Fragment key={"right"}>
+                {/* <Button onClick={toggleDrawer("right", true)}>{"right"}</Button> */}
+                <SwipeableDrawer
+                  anchor={"right"}
+                  open={state["right"]}
+                  onClose={toggleDrawer("right", false)}
+                  onOpen={toggleDrawer("right", true)}
+                >
+                  {list("right")}
+                </SwipeableDrawer>
+              </React.Fragment>
+              ) 
+              : settings.map((setting) => (
                 <MenuItem key={setting} onClick={handleCloseUserMenu}>
                   <Typography textAlign="center">{setting}</Typography>
                 </MenuItem>
-              ))}
+              ))
+
+              }
+              
             </Menu>
           </Box>
         </Toolbar>
@@ -273,3 +297,11 @@ function Header() {
   );
 }
 export default Header;
+
+
+
+
+
+
+
+
