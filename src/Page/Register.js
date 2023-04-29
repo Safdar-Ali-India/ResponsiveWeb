@@ -10,131 +10,131 @@ import { withStyles } from '@material-ui/core';
 import PhoneInput from "react-phone-input-2";
 import "../css files/Phone.module.css";
 const Register = (props) => {
-    // const classes1 = UseStyles();
-    const [openInputbox, setopenInputbox] = useState(false);
-    const [phoneNumber, setPhoneNumber] = useState('');
-    const [country, setCountry] = useState('');
-    const navigate = useNavigate();
+  // const classes1 = UseStyles();
+  const [openInputbox, setopenInputbox] = useState(false);
+  const [phoneNumber, setPhoneNumber] = useState('');
+  const [country, setCountry] = useState('');
+  const navigate = useNavigate();
 
-    const signFunction= ()=>{
-      navigate("/signup");
-  
-    }
-    const handleCountryChange = (country) => {
-        setCountry(country);
-    };
-    const styles = theme => ({
-        field: {
-            margin: '10px 0',
-        },
-        countryList: {
-            ...theme.typography.body1,
-        },
-    });
-    const Input = (props) => {
-        // const classes = UseStyles();
-      
-        return (
-          <Box className={classes.BoxInline} pr={1} pl={1}>
-            <Box className={classes.BoxText} pr={1}>
-              {props.label || props.labels} : {props.req && <span>*</span>}
-            </Box>
-            <Box>
-              <PhoneInput
-                specialLabel={""}
-                country={"in"}
-                inputStyle={{
-                  borderColor: props.touched && props.error && "red"
-                }}
-                {...props}
-              />
-              {props.touched && props.error && (
-                <p
-                  style={{ color: "red" }}
-                  className="MuiFormHelperText-root MuiFormHelperText-contained Mui-error MuiFormHelperText-filled MuiFormHelperText-marginDense"
-                >
-                  {props.error}
-                </p>
-              )}
-            </Box>
-          </Box>
-        );
-      };
-      
-    const nameRef = useRef();
+  const signFunction = () => {
+    navigate("/signup");
 
-    // form submit handler
-    const onSubmit = (e) => {
-        e.preventDefault();
-
-        console.log({
-            // every ref will ALWAYS have the "current" property, which is the HTML DOM element
-            userName: nameRef.current.value
-        });
-
-        // reset the form after using the value - NOT RECOMMENDED
-        nameRef.current.value = "";
-    };
-
-    function handleLoginClick() {
-        console.log("Login clicked");
-      }
-    const { value, defaultCountry, onChange, classes } = props;
+  }
+  const handleCountryChange = (country) => {
+    setCountry(country);
+  };
+  const styles = theme => ({
+    field: {
+      margin: '10px 0',
+    },
+    countryList: {
+      ...theme.typography.body1,
+    },
+  });
+  const Input = (props) => {
+    // const classes = UseStyles();
 
     return (
+      <Box className={classes.BoxInline} pr={1} pl={1}>
+        <Box className={classes.BoxText} pr={1}>
+          {props.label || props.labels} : {props.req && <span>*</span>}
+        </Box>
         <Box>
+          <PhoneInput
+            specialLabel={""}
+            country={"in"}
+            inputStyle={{
+              borderColor: props.touched && props.error && "red"
+            }}
+            {...props}
+          />
+          {props.touched && props.error && (
+            <p
+              style={{ color: "red" }}
+              className="MuiFormHelperText-root MuiFormHelperText-contained Mui-error MuiFormHelperText-filled MuiFormHelperText-marginDense"
+            >
+              {props.error}
+            </p>
+          )}
+        </Box>
+      </Box>
+    );
+  };
 
-            <Container sx={{
-                height: '100vh',
-                display: 'flex',
-                justifyContent: 'center',
-                alignItems: 'center',
-                flexDirection: 'column'
-            }}>
-                {/* <Stack
+  const nameRef = useRef();
+
+  // form submit handler
+  const onSubmit = (e) => {
+    e.preventDefault();
+
+    console.log({
+      // every ref will ALWAYS have the "current" property, which is the HTML DOM element
+      userName: nameRef.current.value
+    });
+
+    // reset the form after using the value - NOT RECOMMENDED
+    nameRef.current.value = "";
+  };
+
+  function handleLoginClick() {
+    console.log("Login clicked");
+  }
+  const { value, defaultCountry, onChange, classes } = props;
+
+  return (
+    <Box>
+
+      <Container sx={{
+        height: '100vh',
+        display: 'flex',
+        justifyContent: 'center',
+        alignItems: 'center',
+        flexDirection: 'column'
+      }}>
+        {/* <Stack
                     direction="column"
                     spacing={2}
                     alignItems="center"
                 > */}
-                {/* </Stack> */}
+        {/* </Stack> */}
 
-                <Box xs={12} sm={6} md={4} spacing={2} >
-                    <Stack direction="row" sx={{ mb: '4', display: 'flex', flexDirection: 'row', justifyContent: 'center', alignItems: 'center' }}>
+        <Box xs={12} sm={6} md={4} spacing={2} >
+          <Stack direction="row" sx={{ mb: '4', display: 'flex', flexDirection: 'row', justifyContent: 'center', alignItems: 'center' }}>
 
-                        <img
-                            style={{
-                                // position: 'absolute',
+            <img
+              style={{
+                // position: 'absolute',
 
-                                width: '43px',
-                                height: '90px',
-                                objectFit: 'cover',
-                            }}
-                            alt=""
-                            src="/final-lucky-dodo-var051@2x.png"
-                        />
-                        <img
-                            style={{
-                                // position: 'absolute',
+                width: '43px',
+                height: '90px',
+                objectFit: 'cover',
+              }}
+              alt=""
+              src="/final-lucky-dodo-var051@2x.png"
+            />
+            <img
+              style={{
+                // position: 'absolute',
 
 
-                                width: '144px',
-                                height: '97px',
-                                objectFit: 'cover',
-                            }}
-                            alt=""
-                            src="/final-lucky-dodo-var011@2x.png"
-                        />
-                    </Stack>
-                    <Stack spacing={2} sx={{
-                        display: 'flex',
-                        justifyContent: 'center',
-                        alignItems: 'center'
-                    }}>
-                        <Typography variant='h5' fontWeight='bold' style={{ marginBottom: '20px', fontSize: '28px' }} >
-                        Sign up
-                        </Typography>
-                        <Typography variant='subtitle3'  sx={{ color: 'grey' }}> Fill in your details below and Sign up  </Typography>
-                        {/* <Button
+                width: '144px',
+                height: '97px',
+                objectFit: 'cover',
+              }}
+              alt=""
+              src="/final-lucky-dodo-var011@2x.png"
+            />
+          </Stack>
+          <Stack spacing={2} sx={{
+            display: 'flex',
+            justifyContent: 'center',
+            alignItems: 'center'
+          }}>
+            <Typography variant='h5' fontWeight='bold' style={{ marginBottom: '20px', fontSize: '28px' }} >
+              Sign up
+            </Typography>
+            <Typography variant='subtitle3' sx={{ color: 'grey' }}> Fill in your details below and Sign up  </Typography>
+            {/* <Button
                             variant="contained"
                             sx={{
                                 width: '300px',
@@ -155,120 +155,106 @@ const Register = (props) => {
                             />
                             <b style={{ color: 'grey' }}>Continue with Google</b>
                         </Button> */}
-                        {/* <Stack> */}
-                            {/* <typography   >Full name</typography > */}
-                            {/* <form onSubmit={onSubmit}  >
+            {/* <Stack> */}
+            {/* <typography   >Full name</typography > */}
+            {/* <form onSubmit={onSubmit}  >
                                 <input id="name" ref={nameRef} type="text" /> */}
-                                {/* <button type="submit">Submit</button> */}
-                            {/* </form> */}
-                        
-                           
+            {/* <button type="submit">Submit</button> */}
+            {/* </form> */}
 
-<Box sx={{ maxWidth: '400px', margin: '0 auto' }}>
-<Stack direction="row" spacing={2} sx={{ marginBottom: '20px', mr: 2 }}>
-  <stack sx={{ display: 'inline-block' }}>
-    <label htmlFor="firstName">First Name </label>
-    <br />
-    <input type="text" id="firstName" defaultValue="First Name"  style={{ width: '212px',borderRadius: '8px' }} />
-  </stack>
 
-  <stack sx={{ display: 'inline-block' }}>
-    <label htmlFor="lastName">Last Name </label>
-    <br />
-    <input type="text" id="lastName" defaultValue="Last Name"style={{ width: '212px' ,borderRadius: '8px'}} />
-  </stack>
-</Stack>
- 
 
+            <Box sx={{ maxWidth: '400px', margin: '0 auto' }}>
+              <Stack direction="row" spacing={2} sx={{ marginBottom: '20px', mr: 2 }}>
+                <stack sx={{ display: 'inline-block' }}>
+                  <label htmlFor="firstName">First Name </label>
+                  <br />
+                  <input type="text" id="firstName" defaultValue="First Name" style={{ width: '212px', borderRadius: '8px' }} />
+                </stack>
+
+                <stack sx={{ display: 'inline-block' }}>
+                  <label htmlFor="lastName">Last Name </label>
+                  <br />
+                  <input type="text" id="lastName" defaultValue="Last Name" style={{ width: '212px', borderRadius: '8px' }} />
+                </stack>
+              </Stack>
 
 
 
 
 
- 
-    <Stack direction="row" spacing={2} sx={{ marginBottom: '20px' }}>
-      <stack sx={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
-        <label htmlFor="gender" >Gender </label> <br />
-        <select id="gender" sx={{ marginTop: '5px' }} style={{ width: '232px',borderRadius: '8px' }}>
-          <option value="male">Male</option>
-          <option value="female">Female</option>
-          <option value="other">Other</option>
-        </select>
-      </stack>
-
-      <stack sx={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
-        <label htmlFor="dateOfBirth">Date of Birth </label><br />
-        <input type="date" id="dateOfBirth" sx={{ marginTop: '5px' }}style={{ width: '212px',borderRadius: '8px' }} />
-      </stack>
-    </Stack>
-
-  <Stack direction="row" spacing={3} sx={{ marginBottom: '16px' }}>
-    <stack>
-      <label htmlFor="country">Country </label>
-      <select id="country" style={{ width: '230px',borderRadius: '8px' }}>
-        <option value="usa">USA</option>
-        <option value="canada">Canada</option>
-        <option value="uk">UK</option>
-      </select>
-    </stack>
-
-    <stack>
-      <label htmlFor="city">City </label><br/>
-      <select id="city" style={{ width: '222px',borderRadius: '8px' }}>
-        <option value="new-york">New York</option>
-        <option value="toronto">Toronto</option>
-        <option value="london">London</option>
-      </select>
-    </stack>
-  </Stack>
-
-  <Stack direction="row" spacing={2} sx={{ marginBottom: '16px' }}>
-    <stack>
-      <label htmlFor="email" >Email:</label>
-      <input type="email" id="email" style={{ width: '452px',borderRadius: '8px' }}/>
-    </stack>
-  </Stack>
-</Box>
-<Box sx={{ maxWidth: '600px', margin: '0 auto' }} className="form-container">
-  {/* ... */}
-</Box>                
-<Typography variant='subtitle2' sx={{ width: '450px' , paddingLeft: '83px'}}><span style={{ color: 'grey' }}>
-By signing up to the Design studio of Databox.mu platform you understand and agree with our</span>  <a href="#" style={{ color: '#1B7BDB' }}> Terms of Service and Privacy Policy</a>
-                            </Typography>
-                        {/* Configure more */}
-
-                   
-
- 
-                
 
 
-                            <Button
-                                variant="contained"
-                                sx={{ width: '350px' }}
-                                //   startIcon={<FacebookIcon />}
-                                //   size="large"
-                                onClick={signFunction}
-                            >
-                              Continue
-                            </Button>
 
- 
-                                
-                           
-                     
+              <Stack direction="row" spacing={2} sx={{ marginBottom: '20px' }}>
+                <stack sx={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
+                  <label htmlFor="gender" >Gender </label> <br />
+                  <select id="gender" sx={{ marginTop: '5px' }} style={{ width: '232px', borderRadius: '8px' }}>
+                    <option value="male">Male</option>
+                    <option value="female">Female</option>
+                    <option value="other">Other</option>
+                  </select>
+                </stack>
 
-                        
+                <stack sx={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
+                  <label htmlFor="dateOfBirth">Date of Birth </label><br />
+                  <input type="date" id="dateOfBirth" sx={{ marginTop: '5px' }} style={{ width: '212px', borderRadius: '8px' }} />
+                </stack>
+              </Stack>
 
+              <Stack direction="row" spacing={3} sx={{ marginBottom: '16px' }}>
+                <stack>
+                  <label htmlFor="country">Country </label>
+                  <select id="country" style={{ width: '230px', borderRadius: '8px' }}>
+                    <option value="usa">USA</option>
+                    <option value="canada">Canada</option>
+                    <option value="uk">UK</option>
+                  </select>
+                </stack>
 
-                        
-                    </Stack>
+                <stack>
+                  <label htmlFor="city">City </label><br />
+                  <select id="city" style={{ width: '222px', borderRadius: '8px' }}>
+                    <option value="new-york">New York</option>
+                    <option value="toronto">Toronto</option>
+                    <option value="london">London</option>
+                  </select>
+                </stack>
+              </Stack>
 
-                </Box>
+              <Stack direction="row" spacing={2} sx={{ marginBottom: '16px' }}>
+                <stack>
+                  <label htmlFor="email" >Email:</label>
+                  <input type="email" id="email" style={{ width: '452px', borderRadius: '8px' }} />
+                </stack>
+              </Stack>
+            </Box>
+            <Box sx={{ maxWidth: '600px', margin: '0 auto' }} className="form-container">
+              {/* ... */}
+            </Box>
+            <Typography variant='subtitle2' sx={{ width: '450px', paddingLeft: '83px',textAlign: 'justify' }}><span style={{ color: 'grey' }}>
+              By signing up to the Design studio of Databox.mu platform you understand and agree with our</span>  <a href="#" style={{ color: '#1B7BDB' }}> Terms of Service and Privacy Policy</a>
+            </Typography>
+            {/* Configure more */}
+            <Box sx={{pl:"80px"}}>
 
-            </Container>
+            <Button
+              variant="contained"
+              // fullWidth={true}
+              sx={{width:'470px'}}
+              
+              //   startIcon={<FacebookIcon />}
+              //   size="large"
+              onClick={signFunction}
+            >
+              Continue
+            </Button>
+            </Box>
+          </Stack>
         </Box>
-    )
+      </Container>
+    </Box>
+  )
 }
 
 export default Register

@@ -1,10 +1,15 @@
-import { Box } from '@mui/material'
+import { Box, Stack, Typography } from '@mui/material'
 import React from 'react'
 
 const Teamspc = () => {
   return (
     <Box >
-        dfghjk
+        <Stack >
+            <Typography variant='subtitle2'>
+
+                
+            </Typography>
+        </Stack>
     </Box>
     )
 }
