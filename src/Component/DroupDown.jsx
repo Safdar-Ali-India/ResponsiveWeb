@@ -7,7 +7,6 @@ import { useNavigate } from "react-router-dom";
 
 export default function DroupDown({page}) {
   const navigate = useNavigate();
-    console.log(page,"page------------------");
   const [anchorEl, setAnchorEl] = React.useState(null);
   const open = Boolean(anchorEl);
   const handleClick = (event) => {
@@ -20,6 +19,12 @@ export default function DroupDown({page}) {
   // ==========navigation to team =================
   const gotoTeams=()=>{
     navigate("/team");
+  }
+  const handlenavigate=(val)=>{
+    if(val==="New York"){
+
+      navigate("/city");
+    }
   }
 
 
@@ -55,9 +60,11 @@ export default function DroupDown({page}) {
         }}
         
         >
-        <MenuItem onClick={handleClose}  >Profile</MenuItem>
-        <MenuItem onClick={handleClose}>My account</MenuItem>
-        <MenuItem onClick={handleClose}>Logout</MenuItem>
+          {page.city.map((val,id)=>(
+
+            <MenuItem onClick={()=>handlenavigate(val)}  >{val}</MenuItem>
+          ))}
+        
       </Menu>
             </>
         )}
