@@ -57,7 +57,7 @@ const ImageInCard = (props) => {
             />
 
             {/* </Stack> */}
-            <Typography variant='subtitle1' gutterBottom sx={{ml:1}}>{val.title}</Typography>
+            <Typography variant='subtitle1' gutterBottom sx={{ml:1, color:'white'}}>{val.title}</Typography>
 
             </Box>
         </Grid>
