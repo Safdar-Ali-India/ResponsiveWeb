@@ -3,8 +3,10 @@ import Button from '@mui/material/Button';
 import Menu from '@mui/material/Menu';
 import MenuItem from '@mui/material/MenuItem';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
+import { useNavigate } from "react-router-dom";
 
 export default function DroupDown({page}) {
+  const navigate = useNavigate();
     console.log(page,"page------------------");
   const [anchorEl, setAnchorEl] = React.useState(null);
   const open = Boolean(anchorEl);
@@ -14,6 +16,12 @@ export default function DroupDown({page}) {
   const handleClose = () => {
     setAnchorEl(null);
   };
+
+  // ==========navigation to team =================
+  const gotoTeams=()=>{
+    navigate("/team");
+  }
+
 
   return (
     <div >
@@ -55,7 +63,7 @@ export default function DroupDown({page}) {
         )}
         {page.type === 'Button' && (
             <>
-             <Button variant="outlined"  >{page.name}</Button>
+             <Button variant="outlined" onClick={gotoTeams} >{page.name}</Button>
             
             </>
         )}
