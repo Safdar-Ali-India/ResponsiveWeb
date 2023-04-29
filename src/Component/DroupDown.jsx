@@ -16,7 +16,7 @@ export default function DroupDown({page}) {
   };
 
   return (
-    <div>
+    <div >
         {page.type === 'DropDown' && (
             <>
             
@@ -26,11 +26,12 @@ export default function DroupDown({page}) {
         aria-haspopup="true"
         aria-expanded={open ? 'true' : undefined}
         onClick={handleClick}
+        // style={{color:'white', backgroundColor: '#1B2330'}}
       >
         {page.name} 
         <ExpandMoreIcon />
       </Button>
-      <Menu
+      <Menu 
         id="demo-positioned-menu"
         aria-labelledby="demo-positioned-button"
         anchorEl={anchorEl}
@@ -44,8 +45,9 @@ export default function DroupDown({page}) {
           vertical: 'top',
           horizontal: 'left',
         }}
-      >
-        <MenuItem onClick={handleClose}>Profile</MenuItem>
+        
+        >
+        <MenuItem onClick={handleClose}  >Profile</MenuItem>
         <MenuItem onClick={handleClose}>My account</MenuItem>
         <MenuItem onClick={handleClose}>Logout</MenuItem>
       </Menu>
@@ -53,7 +55,7 @@ export default function DroupDown({page}) {
         )}
         {page.type === 'Button' && (
             <>
-             <Button variant="outlined">{page.name}</Button>
+             <Button variant="outlined"  >{page.name}</Button>
             
             </>
         )}
