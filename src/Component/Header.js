@@ -10,7 +10,7 @@ import {
   Container,
   Tooltip,
   MenuItem,
-  
+
 
 } from '@mui/material';
 import { useMediaQuery } from "@mui/material";
@@ -57,7 +57,7 @@ const pages = [
   {
     type: "Button",
     name: "Create Team"
-  }
+  } 
 ];
 
 
@@ -107,36 +107,35 @@ function Header() {
 
   const list = (anchor) => (
     <Box
-      sx={{ width: anchor === 'top' || anchor === 'bottom' ? 'auto' : 250 }}
+      sx={{ width: anchor === 'top' || anchor === 'bottom' ? 'auto' : 250  }}
       role="presentation"
       onClick={toggleDrawer(anchor, false)}
       onKeyDown={toggleDrawer(anchor, false)}
     >
-      <List>
-        {['Inbox', 'Starred', 'Send email', 'Drafts'].map((text, index) => (
-          <ListItem key={text} disablePadding>
-            <ListItemButton>
-              <ListItemIcon>
-                {index % 2 === 0 ? <InboxIcon /> : <MailIcon />}
-              </ListItemIcon>
-              <ListItemText primary={text} />
-            </ListItemButton>
-          </ListItem>
-        ))}
-      </List>
-      <Divider />
-      <List>
-        {['All mail', 'Trash', 'Spam'].map((text, index) => (
-          <ListItem key={text} disablePadding>
-            <ListItemButton>
-              <ListItemIcon>
-                {index % 2 === 0 ? <InboxIcon /> : <MailIcon />}
-              </ListItemIcon>
-              <ListItemText primary={text} />
-            </ListItemButton>
-          </ListItem>
-        ))}
-      </List>
+      {
+        anchor === 'left' && (
+          pages.map((val, id) => (
+            <DroupDown page={val} />
+          ))
+        )}
+
+      {
+        anchor === 'right' && (
+
+          <List  >
+            {settings.map((text, index) => (
+              <ListItem key={text} disablePadding>
+                <ListItemButton >
+                  <ListItemIcon >
+                    {index % 2 === 0 ? <InboxIcon /> : <MailIcon />}
+                  </ListItemIcon>
+                  <ListItemText primary={text}   />
+                </ListItemButton>
+              </ListItem>
+            ))}
+          </List>
+        )
+      }
     </Box>
   );
 
@@ -144,9 +143,9 @@ function Header() {
 
 
   return (
-    <AppBar position="static">
+    <AppBar position="static" >
       <Container maxWidth="xl" sx={{ backgroundColor: '#1B2330' }}>
-        <Toolbar disableGutters>
+        <Toolbar disableGutters    >
           <AdbIcon sx={{ display: { xs: 'none', md: 'flex' }, mr: 1 }} />
           <Typography
             variant="h6"
@@ -161,19 +160,20 @@ function Header() {
               letterSpacing: '.3rem',
               color: 'inherit',
               textDecoration: 'none',
+              // backgroundColor:"#1B2330"
             }}
           >
             LOGO
           </Typography>
 
-          <Box sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' } }}>
+          <Box sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none',  } }}>
             <IconButton
               size="large"
               aria-label="account of current user"
               aria-controls="menu-appbar"
               aria-haspopup="true"
-              onClick={ !isMobile ?
-                handleOpenNavMenu: toggleDrawer("left", true)}
+              onClick={!isMobile ?
+                handleOpenNavMenu : toggleDrawer("left", true)}
               color="inherit"
             >
               <MenuIcon />
@@ -200,22 +200,22 @@ function Header() {
 
               {isMobile ? (
                 <React.Fragment key={"left"}>
-                {/* <Button onClick={toggleDrawer("left", true)}>{"left"}</Button> */}
-                <SwipeableDrawer
-                  anchor={"left"}
-                  open={state["left"]}
-                  onClose={toggleDrawer("left", false)}
-                  onOpen={toggleDrawer("left", true)}
-                >
-                  {list("left")}
-                </SwipeableDrawer>
-              </React.Fragment>
+                  {/* <Button onClick={toggleDrawer("left", true)}>{"left"}</Button> */}
+                  <SwipeableDrawer
+                    anchor={"left"}
+                    open={state["left"]}
+                    onClose={toggleDrawer("left", false)}
+                    onOpen={toggleDrawer("left", true)}
+                   >
+                    {list("left")}
+                  </SwipeableDrawer>
+                </React.Fragment>
               ) : pages.map((page) => (
-                <DroupDown page={page}/>
+                <DroupDown page={page} />
               ))
               }
-          
-              
+
+
             </Menu>
           </Box>
           <AdbIcon sx={{ display: { xs: 'flex', md: 'none' }, mr: 1 }} />
@@ -238,17 +238,17 @@ function Header() {
             LOGO
           </Typography>
           <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }}>
-          {pages.map((page) => (
-                <DroupDown page={page}/>
-              ))}
+            {pages.map((page) => (
+              <DroupDown page={page} />
+            ))}
           </Box>
 
           <Box sx={{ flexGrow: 0 }}>
             <Tooltip title="Open settings">
               <IconButton
-              onClick={ !isMobile ?
-                handleOpenUserMenu: toggleDrawer("right", true)}
-               sx={{ p: 0 }}>
+                onClick={!isMobile ?
+                  handleOpenUserMenu : toggleDrawer("right", true)}
+                sx={{ p: 0 }}>
                 <Avatar alt="Remy Sharp" src="/static/images/avatar/2.jpg" />
               </IconButton>
             </Tooltip>
@@ -269,26 +269,27 @@ function Header() {
               onClose={handleCloseUserMenu}
             >
               {isMobile ? (
-                <React.Fragment key={"right"}>
-                {/* <Button onClick={toggleDrawer("right", true)}>{"right"}</Button> */}
-                <SwipeableDrawer
-                  anchor={"right"}
-                  open={state["right"]}
-                  onClose={toggleDrawer("right", false)}
-                  onOpen={toggleDrawer("right", true)}
-                >
-                  {list("right")}
-                </SwipeableDrawer>
-              </React.Fragment>
-              ) 
-              : settings.map((setting) => (
-                <MenuItem key={setting} onClick={handleCloseUserMenu}>
-                  <Typography textAlign="center">{setting}</Typography>
-                </MenuItem>
-              ))
+                <React.Fragment key={"right"} >
+                  {/* <Button onClick={toggleDrawer("right", true)}>{"right"}</Button> */}
+                  <SwipeableDrawer
+                    anchor={"right"}
+                    open={state["right"]}
+                    onClose={toggleDrawer("right", false)}
+                    onOpen={toggleDrawer("right", true)}
+                  
+                  >
+                    {list("right")}
+                  </SwipeableDrawer>
+                </React.Fragment>
+              )
+                : settings.map((setting) => (
+                  <MenuItem key={setting} onClick={handleCloseUserMenu}  >
+                    <Typography textAlign="center">{setting}</Typography>
+                  </MenuItem>
+                ))
 
               }
-              
+
             </Menu>
           </Box>
         </Toolbar>
