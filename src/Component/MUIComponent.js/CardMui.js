@@ -38,8 +38,8 @@ export default function CardMui(props) {
    <>
       <CardHeader
         avatar={
-          <Avatar sx={{ bgcolor: red[500] }} aria-label="recipe">
-            R
+          <Avatar sx={{ bgcolor:"#1B2330" }} aria-label="Apple">
+            S
           </Avatar>
         }
         action={
@@ -47,8 +47,8 @@ export default function CardMui(props) {
             <MoreVertIcon  style={{color:'white'}} />
           </IconButton>
         }
-        title="Shrimp and Chorizo Paella"
-        subheader="September 14, 2016"
+        title="Apple Watch"
+        // subheader="September 14, 2016"
         style={{color:'white'}}
       />
       <CardMedia
@@ -57,12 +57,14 @@ export default function CardMui(props) {
         image={props.data.img}
         alt="Paella dish"
         style={{color:'white'}}
+        
       />
       <CardContent>
-        <Typography variant="body2"  style={{color:'white'}}>
-          This impressive paella is a perfect party dish and a fun meal to cook
-          together with your guests. Add 1 cup of frozen peas along with the mussels,
-          if you like.
+        <Typography > 
+                 Lorem ipsum dolor sit amet consectetur. Sodales in sollicitudin
+                 ultrices est egestas at sapien at. Tristique in in massa iaculis eu
+                 amet amet blandit pretium. Quam curabitur et urna nec tristique sem.
+                 Maecenas netus ac laoreet tincidunt.
         </Typography>
       </CardContent>
       <CardActions disableSpacing>
