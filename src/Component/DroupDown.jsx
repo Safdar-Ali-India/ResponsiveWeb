@@ -39,6 +39,12 @@ export default function DroupDown({page}) {
         aria-haspopup="true"
         aria-expanded={open ? 'true' : undefined}
         onClick={handleClick}
+        sx={{fontFamily: 'Open Sans',
+            fontStyle: 'normal',
+            fontWeight: '600',
+            fontSize: '14px',
+            lineHeight: '20px',
+            color: '#FFFFFF'}}
         // style={{color:'white', backgroundColor: '#1B2330'}}
       >
         {page.name} 
@@ -62,7 +68,14 @@ export default function DroupDown({page}) {
         >
           {page.city.map((val,id)=>(
 
-            <MenuItem onClick={()=>handlenavigate(val)}  >{val}</MenuItem>
+            <MenuItem onClick={()=>handlenavigate(val)}  
+            sx={{fontFamily: 'Open Sans',
+            fontStyle: 'normal',
+            fontWeight: '600',
+            fontSize: '14px',
+            lineHeight: '20px',
+            color: '#FFFFFF'}}
+             >{val}</MenuItem>
           ))}
         
       </Menu>
@@ -70,7 +83,16 @@ export default function DroupDown({page}) {
         )}
         {page.type === 'Button' && (
             <>
-             <Button variant="outlined" onClick={gotoTeams} >{page.name}</Button>
+             <Button variant="outlined" onClick={gotoTeams} sx={{fontFamily: 'Open Sans',
+            fontStyle: 'normal',
+            fontWeight: '600',
+            fontSize: '14px',
+            lineHeight: '20px',
+            color: '#FFFFFF',
+            border: '1px solid #FFFFFF',
+            borderRadius: '8px'
+           }}
+            >{page.name}</Button>
             
             </>
         )}
