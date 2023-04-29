@@ -146,7 +146,8 @@ export default function LuckyHome() {
             <Typography
               variant="h5"
               gutterBottom
-              sx={{
+              sx={{display:'flex',justifyContent:'left',alignItems:'left',flexDirection:'row',
+
                 ml: 1,
                 fontFamily: "Roboto",
                 fontStyle: "normal",
@@ -158,7 +159,7 @@ export default function LuckyHome() {
               onClick={handleClick}
             >
              Top 10 in your country
-              <ArrowForwardIosIcon />
+              <ArrowForwardIosIcon sx={{mt:"5px"}} />
             </Typography>
             <Grid container spacing={2}>
               <ImageInCard itemData={itemData2}/>
@@ -172,7 +173,8 @@ export default function LuckyHome() {
             <Typography
               variant="h5"
               gutterBottom
-              sx={{
+              sx={{display:'flex',justifyContent:'left',alignItems:'left',flexDirection:'row',
+
                 ml: 1,
                 fontFamily: "Roboto",
                 fontStyle: "normal",
@@ -183,7 +185,7 @@ export default function LuckyHome() {
               }}
             >
                Trending now
-              <ArrowForwardIosIcon />
+              <ArrowForwardIosIcon sx={{mt:"5px"}}/>
             </Typography>
             <Grid container spacing={2}>
               <ImageInCard itemData={itemData3}/>
@@ -197,7 +199,8 @@ export default function LuckyHome() {
             <Typography
               variant="h5"
               gutterBottom
-              sx={{
+              sx={{display:'flex',justifyContent:'left',alignItems:'left',flexDirection:'row',
+
                 ml: 1,
                 fontFamily: "Roboto",
                 fontStyle: "normal",
@@ -208,7 +211,7 @@ export default function LuckyHome() {
               }}
             >
              Sci-fi shows
-              <ArrowForwardIosIcon sx={{ pt: "-6" }} />
+              <ArrowForwardIosIcon sx={{mt:"5px"}} />
             </Typography>
             <Grid container spacing={2}>
               <ImageInCard itemData={itemData4}/>

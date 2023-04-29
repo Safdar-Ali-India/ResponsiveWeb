@@ -14,7 +14,7 @@ const style = {
   bgcolor: 'background.paper',
   border: '2px solid #000',
   boxShadow: 24,
-  p: 4,
+  p: 4, color:'white'
 };
 
 export default function KeepMountedModal(props) {
@@ -30,9 +30,10 @@ export default function KeepMountedModal(props) {
         onClose={handleClose}
         aria-labelledby="keep-mounted-modal-title"
         aria-describedby="keep-mounted-modal-description"
+        // style={{color:'#0D1118'}}
       >
-        <Box sx={style}>
-          <CardMui data={props.val} />
+        <Box sx={style}  style={{backgroundColor:'#0D1118', }}>
+          <CardMui data={props.val} style={{color:'#0D1118'}}  />
         </Box>
       </Modal>
     </div>

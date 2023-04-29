@@ -43,50 +43,53 @@ export default function CardMui(props) {
           </Avatar>
         }
         action={
-          <IconButton aria-label="settings">
-            <MoreVertIcon />
+          <IconButton aria-label="settings" style={{color:'white'}}>
+            <MoreVertIcon  style={{color:'white'}} />
           </IconButton>
         }
         title="Shrimp and Chorizo Paella"
         subheader="September 14, 2016"
+        style={{color:'white'}}
       />
       <CardMedia
         component="img"
         height="194"
         image={props.data.img}
         alt="Paella dish"
+        style={{color:'white'}}
       />
       <CardContent>
-        <Typography variant="body2" color="text.secondary">
+        <Typography variant="body2"  style={{color:'white'}}>
           This impressive paella is a perfect party dish and a fun meal to cook
           together with your guests. Add 1 cup of frozen peas along with the mussels,
           if you like.
         </Typography>
       </CardContent>
       <CardActions disableSpacing>
-        <IconButton aria-label="add to favorites">
+        <IconButton aria-label="add to favorites" style={{color:'white'}}>
           <FavoriteIcon />
         </IconButton>
-        <IconButton aria-label="share">
+        <IconButton aria-label="share" style={{color:'white'}}>
           <ShareIcon />
-        </IconButton>
+        </IconButton >
         <ExpandMore
           expand={expanded}
           onClick={handleExpandClick}
           aria-expanded={expanded}
           aria-label="show more"
+          style={{color:'white'}}
         >
           <ExpandMoreIcon />
         </ExpandMore>
       </CardActions>
-      <Collapse in={expanded} timeout="auto" unmountOnExit>
+      <Collapse in={expanded} timeout="auto" unmountOnExit style={{color:'white'}}>
         <CardContent>
           <Typography paragraph>Method:</Typography>
-          <Typography paragraph>
+          <Typography paragraph style={{color:'white'}}>
             Heat 1/2 cup of the broth in a pot until simmering, add saffron and set
             aside for 10 minutes.
           </Typography>
-          <Typography paragraph>
+          <Typography paragraph style={{color:'white'}}>
             Heat oil in a (14- to 16-inch) paella pan or a large, deep skillet over
             medium-high heat. Add chicken, shrimp and chorizo, and cook, stirring
             occasionally until lightly browned, 6 to 8 minutes. Transfer shrimp to a
@@ -95,7 +98,7 @@ export default function CardMui(props) {
             stirring often until thickened and fragrant, about 10 minutes. Add
             saffron broth and remaining 4 1/2 cups chicken broth; bring to a boil.
           </Typography>
-          <Typography paragraph>
+          <Typography paragraph style={{color:'white'}}>
             Add rice and stir very gently to distribute. Top with artichokes and
             peppers, and cook without stirring, until most of the liquid is absorbed,
             15 to 18 minutes. Reduce heat to medium-low, add reserved shrimp and
@@ -103,7 +106,7 @@ export default function CardMui(props) {
             stirring, until mussels have opened and rice is just tender, 5 to 7
             minutes more. (Discard any mussels that don&apos;t open.)
           </Typography>
-          <Typography>
+          <Typography style={{color:'white'}}>
             Set aside off of the heat to let rest for 10 minutes, and then serve.
           </Typography>
         </CardContent>
