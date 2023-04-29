@@ -155,8 +155,12 @@ function Header() {
     <AppBar position="static" >
       <Container maxWidth="xl" sx={{ backgroundColor: '#1B2330' }}>
         <Toolbar disableGutters    >
-          <AdbIcon sx={{ display: { xs: 'none', md: 'flex' }, mr: 1 }} />
-          <Typography
+        {/* <Stack direction={{ xs: 'column', md: 'row' }} style={{ display: { xs: 'none', md: 'flex' }, alignItems: 'center', margin: '-40px'  }}> */}
+      <img src="/final-lucky-dodo-var05@2x.png" alt="Logo 2" style={{ width: '6%', height: 'auto', marginLeft: '-35px',marginBottom:'5px' }} />
+      <img src="/final-lucky-dodo-var01@2x.png" alt="Logo 1" style={{ width: '7%', height: 'auto', marginLeft: '-40px' }} />
+    {/* </Stack> */}
+          {/* <AdbIcon sx={{ display: { xs: 'none', md: 'flex' }, mr: 1 }} /> */}
+          {/* <Typography
             variant="h6"
             noWrap
             component="a"
@@ -172,8 +176,8 @@ function Header() {
               // backgroundColor:"#1B2330"
             }}
           >
-            LOGO
-          </Typography>
+             
+          </Typography> */}
 
           <Box sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none',  } }}>
             <IconButton
@@ -292,8 +296,8 @@ function Header() {
                 </React.Fragment>
               )
                 : settings.map((text) => (
-                  <MenuItem key={text} onClick={()=>navigatefromright(text)}  >
-                    <Typography textAlign="center">{text}</Typography>
+                  <MenuItem key={text} onClick={()=>navigatefromright(text)} style={{backgroundColor:'#1B2330'}} >
+                    <Typography textAlign="center" style={{backgroundColor:'#1B2330'}}  >{text}</Typography>
                   </MenuItem>
                 ))
 

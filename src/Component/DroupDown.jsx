@@ -29,7 +29,7 @@ export default function DroupDown({page}) {
 
 
   return (
-    <div >
+    <div style={{backgroundColor:'#1B2330'}} >
         {page.type === 'DropDown' && (
             <>
             
@@ -44,11 +44,11 @@ export default function DroupDown({page}) {
             fontWeight: '600',
             fontSize: '14px',
             lineHeight: '20px',
-            color: '#FFFFFF'}}
+            color: '#FFFFFF', backgroundColor:'#1B2330'}}
         // style={{color:'white', backgroundColor: '#1B2330'}}
       >
         {page.name} 
-        <ExpandMoreIcon />
+        <ExpandMoreIcon style={{backgroundColor:'#1B2330'}} />
       </Button>
       <Menu 
         id="demo-positioned-menu"
@@ -64,7 +64,7 @@ export default function DroupDown({page}) {
           vertical: 'top',
           horizontal: 'left',
         }}
-        
+        style={{backgroundColor:'#1B2330'}}
         >
           {page.city.map((val,id)=>(
 
@@ -75,6 +75,7 @@ export default function DroupDown({page}) {
             fontSize: '14px',
             lineHeight: '20px',
             color: '#FFFFFF'}}
+            style={{backgroundColor:'#1B2330'}}
              >{val}</MenuItem>
           ))}
         
@@ -89,6 +90,7 @@ export default function DroupDown({page}) {
             fontSize: '14px',
             lineHeight: '20px',
             color: '#FFFFFF',
+            backgroundColor:'#1B2330',
             border: '1px solid #FFFFFF',
             borderRadius: '8px'
            }}
