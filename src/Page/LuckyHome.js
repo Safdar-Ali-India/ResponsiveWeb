@@ -77,8 +77,8 @@ export default function LuckyHome() {
               backgroundImage: `url(${image1})`,
               height: "1650px",
               width: "100%",
-              backgroundSize: "1550px 155px",
-
+              backgroundSize: "3050px 315px",
+              backgroundPosition: "center bottom",
               backgroundRepeat: "no-repeat",
               // backgroundSize: "cover",
               aspectRatio: "1/1",
