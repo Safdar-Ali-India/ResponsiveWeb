@@ -6,6 +6,8 @@ import City from './Page/City'
 import Signup from './Page/Signup'
 import Register from './Page/Register'
 import Explore from './Page/Explore'
+// import GeneratePin from './Page/generatepin'
+import Pingen from './Page/Pingen'
 import EnterYourCode from './Page/EnterYourCode'
 
 const AllRoutes = () => {
@@ -20,6 +22,7 @@ const AllRoutes = () => {
       {/* <Route path="/signup" element={<Singup />} /> */}
       <Route path="/explore" element={<Explore />} />
       <Route path="/enter-your-code" element={<EnterYourCode />} />
+      <Route path="/pin" element={<Pingen />} />
     </Routes>
   )
 }

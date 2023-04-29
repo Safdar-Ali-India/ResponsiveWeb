@@ -4,19 +4,15 @@ import { Container, Box, Grid, Typography, Button, Stack, TextField } from '@mui
 import FacebookIcon from '@mui/icons-material/Facebook';
 import PhoneInput from 'react-phone-number-input/input';
 import ReactPhoneInput from 'react-phone-input-mui';
-import { useNavigate } from "react-router-dom";
 import { withStyles } from '@material-ui/core';
 import { MuiOtpInput } from 'mui-one-time-password-input'
-const EnterYourCode = (props) => {
+
+
+const Pingen = (props) => {
     const [openInputbox, setopenInputbox] = useState(false);
     const [phoneNumber, setPhoneNumber] = useState('');
     const [country, setCountry] = useState('');
-    const navigate = useNavigate();
-
-    const sign= ()=>{
-      navigate("/");
-  
-    }
+ 
         const [otp, setOtp] = React.useState('')
       
         const handleChange = (newValue) => {
@@ -95,13 +91,13 @@ const EnterYourCode = (props) => {
                         alignItems: 'center'
                     }}>
                         <Typography variant='h5' fontWeight='bold' style={{ marginBottom: '20px', fontSize: '28px' }} >
-                        Enter your code
+                        Generate Your Pin
                         </Typography>
 
-                        <Stack direction="row" spacing={30}>
+                        {/* <Stack direction="row" spacing={30}>
   <Stack>+945 6784567</Stack>
   <a href="#" style={{ color: '#1B7BDB' }}>Resend</a>
-</Stack>
+</Stack> */}
                         <Box spacing={2} sx={{ width: '400px'}}>
       {/* <Typography variant="h6" align="center">
         Enter your code
@@ -118,7 +114,7 @@ const EnterYourCode = (props) => {
 <MuiOtpInput value={otp} onChange={handleChange} length={6}  />
 <br/>
         
-        <Button type="submit" variant="contained" fullWidth onClick={sign}>
+        <Button type="submit" variant="contained" fullWidth>
           Continue
         </Button>
  
@@ -135,4 +131,4 @@ const EnterYourCode = (props) => {
     )
 }
 
-export default EnterYourCode
+export default Pingen
