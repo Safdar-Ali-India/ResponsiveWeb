@@ -6,13 +6,18 @@ import PhoneInput from 'react-phone-number-input/input';
 import ReactPhoneInput from 'react-phone-input-mui';
 import { withStyles } from '@material-ui/core';
 import { MuiOtpInput } from 'mui-one-time-password-input'
-
+import { useNavigate } from "react-router-dom";
 
 const GeneratePin = (props) => {
     const [openInputbox, setopenInputbox] = useState(false);
     const [phoneNumber, setPhoneNumber] = useState('');
     const [country, setCountry] = useState('');
- 
+    const navigate = useNavigate();
+
+    const signs= ()=>{
+      navigate("/");
+  
+    }
         const [otp, setOtp] = React.useState('')
       
         const handleChange = (newValue) => {
@@ -114,7 +119,7 @@ const GeneratePin = (props) => {
 <MuiOtpInput value={otp} onChange={handleChange} length={6}  />
 <br/>
         
-        <Button type="submit" variant="contained" fullWidth>
+        <Button type="submit" variant="contained" fullWidth onClick={signs}>
           Continue
         </Button>
  
