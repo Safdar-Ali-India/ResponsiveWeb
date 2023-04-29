@@ -68,17 +68,31 @@ console.log("prop.pupup",props);
         aria-labelledby="scroll-dialog-title"
         aria-describedby="scroll-dialog-description"
       >
-        <DialogTitle id="scroll-dialog-title">Subscribe</DialogTitle>
-        <DialogContent dividers={scroll === 'paper'}>
+        <DialogTitle
+  id="scroll-dialog-title"
+  sx={{
+    textAlign: 'center',
+    fontWeight: 'bold',
+    fontFamily: 'Arial, sans-serif',
+    backgroundColor: '#1B2330',
+    color: 'white'
+  }}
+>
+  <Typography variant="h5">
+    Electronics
+  </Typography>
+</DialogTitle>
+        <DialogContent dividers={scroll === 'paper'} style={{backgroundColor:'#1B2330' ,color:'white'}}>
          
-        <Box sx={{ my: "2", backgroundColor: "#1B2330" }}>
+        <Box sx={{ my: "2",backgroundColor: "#1B2330", color:'white'}}>
           
 
-          <Stack sx={{ mx: 3 }}>
+          <Stack sx={{ mx: 3,backgroundColor: "#1B2330" , color:'white'}} >
             <Typography
               variant="h5"
               gutterBottom
-              sx={{
+              sx={{display:'flex',justifyContent:'left',alignItems:'left',flexDirection:'row',
+              
                 ml: 1,
                 fontFamily: "Roboto",
                 fontStyle: "normal",
@@ -89,9 +103,13 @@ console.log("prop.pupup",props);
               }}
               // onClick={handleClick}
             >
-              Sew Again
+              See Again
               <ArrowForwardIosIcon sx={{mt:'5px'}}/>
             </Typography>
+            <Grid container spacing={1}>
+              <ImageInCard itemData={props.itemData} />
+              
+            </Grid>
             <Grid container spacing={1}>
               <ImageInCard itemData={props.itemData} />
               
@@ -178,11 +196,16 @@ console.log("prop.pupup",props);
 
 
         </DialogContent>
-        <DialogActions>
-          <Button onClick={handleClose}>Cancel</Button>
-          <Button onClick={handleClose}>Subscribe</Button>
+        <DialogActions style={{backgroundColor:'#1B2330' ,color:'white'}}>
+          <Button onClick={handleClose} style={{backgroundColor:'#1B2330' ,color:'white'}}>Cancel</Button>
+          <Button onClick={handleClose} style={{backgroundColor:'#1B2330' ,color:'white'}}>Subscribe</Button>
         </DialogActions>
+        
       </Dialog>
+       
+      
+    
     </div>
+    
   );
 }
