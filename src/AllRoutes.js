@@ -9,6 +9,7 @@ import Explore from './Page/Explore'
 // import GeneratePin from './Page/generatepin'
 import Pingen from './Page/Pingen'
 import EnterYourCode from './Page/EnterYourCode'
+import Teams from './Page/Teams'
 
 const AllRoutes = () => {
   return (
@@ -22,6 +23,7 @@ const AllRoutes = () => {
       {/* <Route path="/signup" element={<Singup />} /> */}
       <Route path="/explore" element={<Explore />} />
       <Route path="/enter-your-code" element={<EnterYourCode />} />
+      <Route path="/team" element={<Teams />} />
       <Route path="/pin" element={<Pingen />} />
     </Routes>
   )
