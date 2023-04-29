@@ -79,7 +79,11 @@ export default function LuckyHome() {
               width: "100%",
               backgroundSize: "3050px 315px",
               backgroundPosition: "center bottom",
-              backgroundRepeat: "no-repeat",
+              backgroundRepeat: "no-repeat", 
+              opacity: 0.5,
+              // filter: "brightness(1.2) contrast(1.3) saturate(1.2)",
+
+              // filter: "brightness(0.8) sepia(0.3) hue-rotate(-20deg)",
               // backgroundSize: "cover",
               aspectRatio: "1/1",
               display: "flex",
