@@ -9,10 +9,11 @@ const Teams = () => {
     const isMobile = useMediaQuery("(max-width: 600px)");
   return (
     <Box>
-    {isMobile ? (
+      <Teamspc />
+    {/* {isMobile ? (
       <TeamsforMobile />
     ) :  <Teamspc />
-    }
+    } */}
   </Box>
   )
 }

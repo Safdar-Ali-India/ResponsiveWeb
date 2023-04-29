@@ -75,11 +75,12 @@ export default function LuckyHome() {
           <Paper
             sx={{
               backgroundImage: `url(${image1})`,
-              height: "160px",
+              height: "1650px",
               width: "100%",
+              backgroundSize: "1550px 155px",
 
               backgroundRepeat: "no-repeat",
-              backgroundSize: "cover",
+              // backgroundSize: "cover",
               aspectRatio: "1/1",
               display: "flex",
               alignItems: "center",
@@ -225,7 +226,7 @@ export default function LuckyHome() {
         <Box>
       {isMobile ? (
         <Box>Mobile content</Box>
-      ) :  callpopup && <PopUp data={callpopup} setcallpopup={setcallpopup} itemData={itemData1}/>
+      ) :  callpopup && <PopUp data={callpopup} setcallpopup={setcallpopup} />
       }
     </Box>
         {/* {callpopup && <PopUp data={callpopup} setcallpopup={setcallpopup} />} */}
