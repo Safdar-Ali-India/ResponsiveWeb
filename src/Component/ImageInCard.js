@@ -67,6 +67,7 @@ const ImageInCard = (props) => {
                                 lineHeight: '19px',
                                 textAlign: 'left',
                                 color: '#FFFFFF',
+                                mt:"7px",
                             }}>{val.title}</Typography>
 
                         </Box>

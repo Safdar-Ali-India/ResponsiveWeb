@@ -154,6 +154,7 @@ export default function LuckyHome() {
               sx={{display:'flex',justifyContent:'left',alignItems:'left',flexDirection:'row',
 
                 ml: 1,
+                mt:"5px",
                 fontFamily: "Roboto",
                 fontStyle: "normal",
                 fontWeight: "700",
@@ -166,7 +167,7 @@ export default function LuckyHome() {
              Top 10 in your country
               <ArrowForwardIosIcon sx={{mt:"5px"}} />
             </Typography>
-            <Grid container spacing={2}>
+            <Grid container spacing={2} >
               <ImageInCard itemData={itemData2}/>
               {/* <ImageInCard itemData={itemData}/>
               <ImageInCard itemData={itemData}/>
