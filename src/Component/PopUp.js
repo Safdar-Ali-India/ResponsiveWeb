@@ -17,6 +17,14 @@ import ArrowForwardIosIcon from "@mui/icons-material/ArrowForwardIos";
 import ImageInCard from './ImageInCard';
 
 export default function PopUp(props) {
+
+
+console.log("prop.pupup",props);
+
+
+
+
+
   const [open, setOpen] = React.useState(false);
   const [scroll, setScroll] = React.useState('paper');
 
@@ -64,17 +72,7 @@ export default function PopUp(props) {
         <DialogContent dividers={scroll === 'paper'}>
          
         <Box sx={{ my: "2", backgroundColor: "#1B2330" }}>
-          {/* <Box
-            sx={{
-              py: 3,
-              width: "100%",
-              height: "auto",
-              display: "flex",
-              justifyContent: "center",
-            }}
-          >
-            <SearchBox />
-          </Box> */}
+          
 
           <Stack sx={{ mx: 3 }}>
             <Typography
@@ -92,17 +90,15 @@ export default function PopUp(props) {
               // onClick={handleClick}
             >
               Sew Again
-              <ArrowForwardIosIcon />
+              <ArrowForwardIosIcon sx={{mt:'5px'}}/>
             </Typography>
             <Grid container spacing={1}>
-              <ImageInCard />
-              <ImageInCard />
-              <ImageInCard />
-              <ImageInCard />
+              <ImageInCard itemData={props.itemData} />
+              
             </Grid>
           </Stack>
 
-          <Stack sx={{ mx: 3 }}>
+          {/* <Stack sx={{ mx: 3 }}>
             <Typography
               variant="h5"
               gutterBottom
@@ -177,7 +173,7 @@ export default function PopUp(props) {
               <ImageInCard />
               <ImageInCard />
             </Grid>
-          </Stack>
+          </Stack> */}
         </Box>
 
 

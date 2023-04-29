@@ -222,7 +222,7 @@ export default function LuckyHome() {
         <Box>
       {isMobile ? (
         <Box>Mobile content</Box>
-      ) :  callpopup && <PopUp data={callpopup} setcallpopup={setcallpopup} />
+      ) :  callpopup && <PopUp data={callpopup} setcallpopup={setcallpopup} itemData={itemData1}/>
       }
     </Box>
         {/* {callpopup && <PopUp data={callpopup} setcallpopup={setcallpopup} />} */}
