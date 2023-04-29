@@ -2,14 +2,14 @@ import React, { useState, useRef } from 'react'
 import { Container, Box, Grid, Typography, Button, Stack, TextField } from '@mui/material';
 import FacebookIcon from '@mui/icons-material/Facebook';
 // import PhoneInput from 'react-phone-number-input/input';
-import UseStyles from "../Component/UseStyles";
+// import UseStyles from "../Component/UseStyles";
 import ReactPhoneInput from 'react-phone-input-mui';
 import { makeStyles } from '@material-ui/styles';
 import { withStyles } from '@material-ui/core';
 import PhoneInput from "react-phone-input-2";
 import "../css files/Phone.module.css";
 const Register = (props) => {
-    const classes1 = UseStyles();
+    // const classes1 = UseStyles();
     const [openInputbox, setopenInputbox] = useState(false);
     const [phoneNumber, setPhoneNumber] = useState('');
     const [country, setCountry] = useState('');
@@ -26,7 +26,7 @@ const Register = (props) => {
         },
     });
     const Input = (props) => {
-        const classes = UseStyles();
+        // const classes = UseStyles();
       
         return (
           <Box className={classes.BoxInline} pr={1} pl={1}>

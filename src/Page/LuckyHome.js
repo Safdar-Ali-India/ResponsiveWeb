@@ -51,7 +51,7 @@ export default function LuckyHome() {
     setOpen(true);
     setScroll(scrollType);
   };
-  const handleCliak = () => {
+  const handleClick = () => {
     console.log("888888888888");
     setcallpopup(!callpopup);
   };
@@ -129,16 +129,16 @@ export default function LuckyHome() {
                 lineHeight: "32px",
                 color: "#FFFFFF",
               }}
-              onClick={handleCliak}
+              onClick={handleClick}
             >
               Sew Again
               <ArrowForwardIosIcon />
             </Typography>
             <Grid container spacing={1}>
-              <ImageInCard />
-              <ImageInCard />
-              <ImageInCard />
-              <ImageInCard />
+              <ImageInCard itemData={itemData} />
+              {/* <ImageInCard itemData={itemData}/>
+              <ImageInCard itemData={itemData}/>
+              <ImageInCard itemData={itemData}/> */}
             </Grid>
           </Stack>
 
@@ -155,16 +155,16 @@ export default function LuckyHome() {
                 lineHeight: "32px",
                 color: "#FFFFFF",
               }}
-              onClick={handleCliak}
+              onClick={handleClick}
             >
               Top 10 in your country
               <ArrowForwardIosIcon />
             </Typography>
             <Grid container spacing={2}>
-              <ImageInCard />
-              <ImageInCard />
-              <ImageInCard />
-              <ImageInCard />
+              <ImageInCard itemData={itemData}/>
+              {/* <ImageInCard itemData={itemData}/>
+              <ImageInCard itemData={itemData}/>
+              <ImageInCard itemData={itemData}/> */}
             </Grid>
           </Stack>
 
@@ -186,10 +186,10 @@ export default function LuckyHome() {
               <ArrowForwardIosIcon />
             </Typography>
             <Grid container spacing={2}>
-              <ImageInCard />
-              <ImageInCard />
-              <ImageInCard />
-              <ImageInCard />
+              <ImageInCard itemData={itemData}/>
+              {/* <ImageInCard itemData={itemData}/>
+              <ImageInCard itemData={itemData}/>
+              <ImageInCard itemData={itemData}/> */}
             </Grid>
           </Stack>
 
@@ -211,11 +211,11 @@ export default function LuckyHome() {
               <ArrowForwardIosIcon sx={{ pt: "-6" }} />
             </Typography>
             <Grid container spacing={2}>
-              <ImageInCard />
-              <ImageInCard />
-              <ImageInCard />
-              <ImageInCard />
-              <ImageInCard />
+              <ImageInCard itemData={itemData}/>
+              {/* <ImageInCard itemData={itemData}/>
+              <ImageInCard itemData={itemData}/>
+              <ImageInCard itemData={itemData}/>
+              <ImageInCard itemData={itemData}/> */}
             </Grid>
           </Stack>
         </Box>
@@ -232,3 +232,46 @@ export default function LuckyHome() {
     </>
   );
 }
+
+
+
+
+const itemData = [
+  {
+      img: 'https://images.unsplash.com/photo-1551963831-b3b1ca40c98e',
+      title: 'Breakfast',
+      body:"Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.",
+  },
+  {
+      img: 'https://images.unsplash.com/photo-1551782450-a2132b4ba21d',
+      title: 'Burger',
+      body:"Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.",
+  },
+  {
+      img: 'https://images.unsplash.com/photo-1522770179533-24471fcdba45',
+      title: 'Camera',
+      body:"Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.",
+  },
+  {
+      img: 'https://images.unsplash.com/photo-1444418776041-9c7e33cc5a9c',
+      title: 'Coffee',
+      body:"Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.",
+  },
+  // {
+  //     img: 'https://images.unsplash.com/photo-1444418776041-9c7e33cc5a9c',
+  //     title: 'Coffee',
+  //     body:"Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.",
+  // },
+  // {
+  //     img: 'https://images.unsplash.com/photo-1444418776041-9c7e33cc5a9c',
+  //     title: 'Coffee',
+  //     body:"Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.",
+  // },
+  // {
+  //     img: 'https://images.unsplash.com/photo-1444418776041-9c7e33cc5a9c',
+  //     title: 'Coffee',
+  //     body:"Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.",
+  // },
+
+
+];

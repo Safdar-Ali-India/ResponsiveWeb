@@ -18,6 +18,7 @@ const style = {
 };
 
 export default function KeepMountedModal(props) {
+  console.log("modelprop",props.val);
   const { setOpen,open,handleOpen,handleClose} = props
 
   return (
@@ -31,7 +32,7 @@ export default function KeepMountedModal(props) {
         aria-describedby="keep-mounted-modal-description"
       >
         <Box sx={style}>
-          <CardMui />
+          <CardMui data={props.val} />
         </Box>
       </Modal>
     </div>

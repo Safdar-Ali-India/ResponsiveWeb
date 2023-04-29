@@ -1,10 +1,20 @@
 import * as React from 'react';
-import Button from '@mui/material/Button';
-import Dialog from '@mui/material/Dialog';
-import DialogActions from '@mui/material/DialogActions';
-import DialogContent from '@mui/material/DialogContent';
-import DialogContentText from '@mui/material/DialogContentText';
-import DialogTitle from '@mui/material/DialogTitle';
+import {
+  Button,
+  Dialog,
+  DialogActions,
+  DialogContent,
+  DialogContentText,
+  DialogTitle,
+  Grid,
+  Stack,
+  Typography,
+  Box
+} from '@mui/material';
+
+import ArrowForwardIosIcon from "@mui/icons-material/ArrowForwardIos";
+
+import ImageInCard from './ImageInCard';
 
 export default function PopUp(props) {
   const [open, setOpen] = React.useState(false);
@@ -38,6 +48,9 @@ export default function PopUp(props) {
     }
   }, [open,props]);
 
+
+
+
   return (
     <div>
       <Dialog
@@ -49,20 +62,125 @@ export default function PopUp(props) {
       >
         <DialogTitle id="scroll-dialog-title">Subscribe</DialogTitle>
         <DialogContent dividers={scroll === 'paper'}>
-          <DialogContentText
-            id="scroll-dialog-description"
-            ref={descriptionElementRef}
-            tabIndex={-1}
+         
+        <Box sx={{ my: "2", backgroundColor: "#1B2330" }}>
+          {/* <Box
+            sx={{
+              py: 3,
+              width: "100%",
+              height: "auto",
+              display: "flex",
+              justifyContent: "center",
+            }}
           >
-            {[...new Array(50)]
-              .map(
-                () => `Cras mattis consectetur purus sit amet fermentum.
-Cras justo odio, dapibus ac facilisis in, egestas eget quam.
-Morbi leo risus, porta ac consectetur ac, vestibulum at eros.
-Praesent commodo cursus magna, vel scelerisque nisl consectetur et.`,
-              )
-              .join('\n')}
-          </DialogContentText>
+            <SearchBox />
+          </Box> */}
+
+          <Stack sx={{ mx: 3 }}>
+            <Typography
+              variant="h5"
+              gutterBottom
+              sx={{
+                ml: 1,
+                fontFamily: "Roboto",
+                fontStyle: "normal",
+                fontWeight: "700",
+                fontSize: "20px",
+                lineHeight: "32px",
+                color: "#FFFFFF",
+              }}
+              // onClick={handleClick}
+            >
+              Sew Again
+              <ArrowForwardIosIcon />
+            </Typography>
+            <Grid container spacing={1}>
+              <ImageInCard />
+              <ImageInCard />
+              <ImageInCard />
+              <ImageInCard />
+            </Grid>
+          </Stack>
+
+          <Stack sx={{ mx: 3 }}>
+            <Typography
+              variant="h5"
+              gutterBottom
+              sx={{
+                ml: 1,
+                fontFamily: "Roboto",
+                fontStyle: "normal",
+                fontWeight: "700",
+                fontSize: "20px",
+                lineHeight: "32px",
+                color: "#FFFFFF",
+              }}
+              // onClick={handleClick}
+            >
+              Top 10 in your country
+              <ArrowForwardIosIcon />
+            </Typography>
+            <Grid container spacing={2}>
+              <ImageInCard />
+              <ImageInCard />
+              <ImageInCard />
+              <ImageInCard />
+            </Grid>
+          </Stack>
+
+          <Stack sx={{ m: 3 }}>
+            <Typography
+              variant="h5"
+              gutterBottom
+              sx={{
+                ml: 1,
+                fontFamily: "Roboto",
+                fontStyle: "normal",
+                fontWeight: "700",
+                fontSize: "20px",
+                lineHeight: "32px",
+                color: "#FFFFFF",
+              }}
+            >
+              Sew Again
+              <ArrowForwardIosIcon />
+            </Typography>
+            <Grid container spacing={2}>
+              <ImageInCard />
+              <ImageInCard />
+              <ImageInCard />
+              <ImageInCard />
+            </Grid>
+          </Stack>
+
+          <Stack sx={{ m: 3 }}>
+            <Typography
+              variant="h5"
+              gutterBottom
+              sx={{
+                ml: 1,
+                fontFamily: "Roboto",
+                fontStyle: "normal",
+                fontWeight: "700",
+                fontSize: "20px",
+                lineHeight: "32px",
+                color: "#FFFFFF",
+              }}
+            >
+              Sew Again
+              <ArrowForwardIosIcon sx={{ pt: "-6" }} />
+            </Typography>
+            <Grid container spacing={2}>
+              <ImageInCard />
+              <ImageInCard />
+              <ImageInCard />
+              <ImageInCard />
+              <ImageInCard />
+            </Grid>
+          </Stack>
+        </Box>
+
+
         </DialogContent>
         <DialogActions>
           <Button onClick={handleClose}>Cancel</Button>
