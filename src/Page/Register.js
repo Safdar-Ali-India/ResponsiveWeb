@@ -1,6 +1,7 @@
 import React, { useState, useRef } from 'react'
 import { Container, Box, Grid, Typography, Button, Stack, TextField } from '@mui/material';
 import FacebookIcon from '@mui/icons-material/Facebook';
+import { useNavigate } from "react-router-dom";
 // import PhoneInput from 'react-phone-number-input/input';
 // import UseStyles from "../Component/UseStyles";
 import ReactPhoneInput from 'react-phone-input-mui';
@@ -13,7 +14,12 @@ const Register = (props) => {
     const [openInputbox, setopenInputbox] = useState(false);
     const [phoneNumber, setPhoneNumber] = useState('');
     const [country, setCountry] = useState('');
+    const navigate = useNavigate();
 
+    const signFunction= ()=>{
+      navigate("/signup");
+  
+    }
     const handleCountryChange = (country) => {
         setCountry(country);
     };
@@ -226,7 +232,7 @@ const Register = (props) => {
 <Box sx={{ maxWidth: '600px', margin: '0 auto' }} className="form-container">
   {/* ... */}
 </Box>                
-<Typography variant='subtitle2' sx={{ width: '450px' }}><span style={{ color: 'grey' }}>
+<Typography variant='subtitle2' sx={{ width: '450px' , paddingLeft: '83px'}}><span style={{ color: 'grey' }}>
 By signing up to the Design studio of Databox.mu platform you understand and agree with our</span>  <a href="#" style={{ color: '#1B7BDB' }}> Terms of Service and Privacy Policy</a>
                             </Typography>
                         {/* Configure more */}
@@ -234,7 +240,7 @@ By signing up to the Design studio of Databox.mu platform you understand and agr
                    
 
  
-                        {openInputbox === false ? (
+                
 
 
                             <Button
@@ -242,46 +248,19 @@ By signing up to the Design studio of Databox.mu platform you understand and agr
                                 sx={{ width: '350px' }}
                                 //   startIcon={<FacebookIcon />}
                                 //   size="large"
-                                onClick={() => {
-                                    setopenInputbox(!openInputbox);
-                                }}
+                                onClick={signFunction}
                             >
                               Continue
                             </Button>
 
-
-                        ) : (<Stack sx={{ m: 2 }} spacing={2}>
-                            <ReactPhoneInput
-                                value={value}
-                                defaultCountry={defaultCountry || 'gb'}
-                                onChange={onChange}
-                                inputClass={classes?.field}
-                                dropdownClass={classes?.countryList}
-                                component={TextField}
-                                inputExtraProps={{
-                                    margin: 'normal',
-                                    autoComplete: 'phone',
-                                    name: 'custom-username'
-                                }}
+ 
                                 
-                            />
-                            {/* <TextField id="outlined-basic" label="Outlined" variant="outlined" sx={{ width: '350px', }} /> */}
-                            <Typography variant='subtitle2' sx={{ width: '350px' }}><span style={{ color: 'grey' }}>
-                                When you tap “Continue”, LuckyDodo will send a text with a verification code. Message and data rates may apply.The verified phone number can be used to login.</span>  <span style={{ color: '#1B7BDB' }}>Learn what happens when your number changes.</span>
-                            </Typography>
+                           
+                     
 
-                            <Button variant="contained" sx={{ width: '350px', }} startIcon={<FacebookIcon />}
-                                size="large" onClick={() => { setopenInputbox(!openInputbox) }}>
-                                Continue
-                            </Button>
+                        
 
-                        </Stack>)
 
-                        }
-
-<Typography variant='subtitle3'  sx={{ color: 'grey' }}>  Already Haven An Account? <a href="#" onClick={handleLoginClick} style={{ color: '#1B7BDB' }}>
-      Login
-    </a> </Typography>  
                         
                     </Stack>
 

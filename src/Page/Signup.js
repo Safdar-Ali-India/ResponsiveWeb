@@ -4,11 +4,17 @@ import FacebookIcon from '@mui/icons-material/Facebook';
 import PhoneInput from 'react-phone-number-input/input';
 import ReactPhoneInput from 'react-phone-input-mui';
 import { withStyles } from '@material-ui/core';
+import { useNavigate } from "react-router-dom";
 const Signup = (props) => {
     const [openInputbox, setopenInputbox] = useState(false);
     const [phoneNumber, setPhoneNumber] = useState('');
     const [country, setCountry] = useState('');
+    const navigate = useNavigate();
 
+    const signFunction= ()=>{
+      navigate("/enter-your-code");
+  
+    }
     const handleCountryChange = (country) => {
         setCountry(country);
     };
@@ -49,7 +55,7 @@ const Signup = (props) => {
                             style={{
                                 // position: 'absolute',
 
-                                width: '151px',
+                                width: '40px',
                                 height: '85px',
                                 objectFit: 'cover',
                             }}
@@ -170,8 +176,8 @@ const Signup = (props) => {
                                 When you tap “Continue”, LuckyDodo will send a text with a verification code. Message and data rates may apply.The verified phone number can be used to login.</span>  <span style={{ color: '#1B7BDB' }}>Learn what happens when your number changes.</span>
                             </Typography>
 
-                            <Button variant="contained" sx={{ width: '350px', }} startIcon={<FacebookIcon />}
-                                size="large" onClick={() => { setopenInputbox(!openInputbox) }}>
+                            <Button variant="contained" sx={{ width: '350px', }}  
+                                size="large" onClick={signFunction}>
                                 Continue
                             </Button>
 

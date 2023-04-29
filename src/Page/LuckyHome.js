@@ -135,7 +135,7 @@ export default function LuckyHome() {
               <ArrowForwardIosIcon />
             </Typography>
             <Grid container spacing={1}>
-              <ImageInCard itemData={itemData} />
+              <ImageInCard itemData={itemData1} />
               {/* <ImageInCard itemData={itemData}/>
               <ImageInCard itemData={itemData}/>
               <ImageInCard itemData={itemData}/> */}
@@ -256,22 +256,68 @@ const itemData = [
       img: 'https://images.unsplash.com/photo-1444418776041-9c7e33cc5a9c',
       title: 'Coffee',
       body:"Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.",
-  },
-  // {
-  //     img: 'https://images.unsplash.com/photo-1444418776041-9c7e33cc5a9c',
-  //     title: 'Coffee',
-  //     body:"Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.",
-  // },
-  // {
-  //     img: 'https://images.unsplash.com/photo-1444418776041-9c7e33cc5a9c',
-  //     title: 'Coffee',
-  //     body:"Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.",
-  // },
-  // {
-  //     img: 'https://images.unsplash.com/photo-1444418776041-9c7e33cc5a9c',
-  //     title: 'Coffee',
-  //     body:"Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.",
-  // },
-
-
+  }];
+  const itemData1 = [
+    {
+      img: '/image20@2x.png',
+        title: 'Breakfast',
+        body:"Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.",
+    },
+    {
+      img: '/image20@2x.png',
+        title: 'Burger',
+        body:"Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.",
+    },
+    {
+      img: '/image20@2x.png',
+        title: 'Camera',
+        body:"Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.",
+    },
+    {
+      img: '/image20@2x.png',
+        title: 'Coffee',
+        body:"Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.",
+    }];
+    const itemData2 = [
+      {
+        img: '/image20@2x.png',
+          title: 'Breakfast',
+          body:"Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.",
+      },
+      {
+          img: 'https://images.unsplash.com/photo-1551782450-a2132b4ba21d',
+          title: 'Burger',
+          body:"Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.",
+      },
+      {
+          img: 'https://images.unsplash.com/photo-1522770179533-24471fcdba45',
+          title: 'Camera',
+          body:"Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.",
+      },
+      {
+          img: 'https://images.unsplash.com/photo-1444418776041-9c7e33cc5a9c',
+          title: 'Coffee',
+          body:"Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.",
+      }];
+      const itemData3 = [
+        {
+            img: 'https://images.unsplash.com/photo-1551963831-b3b1ca40c98e',
+            title: 'Breakfast',
+            body:"Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.",
+        },
+        {
+            img: 'https://images.unsplash.com/photo-1551782450-a2132b4ba21d',
+            title: 'Burger',
+            body:"Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.",
+        },
+        {
+            img: 'https://images.unsplash.com/photo-1522770179533-24471fcdba45',
+            title: 'Camera',
+            body:"Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.",
+        },
+        {
+            img: 'https://images.unsplash.com/photo-1444418776041-9c7e33cc5a9c',
+            title: 'Coffee',
+            body:"Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.",
+        },
 ];
