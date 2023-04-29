@@ -14,7 +14,7 @@ const EnterYourCode = (props) => {
     const navigate = useNavigate();
 
     const sign= ()=>{
-      navigate("/");
+      navigate("/pin");
   
     }
         const [otp, setOtp] = React.useState('')
