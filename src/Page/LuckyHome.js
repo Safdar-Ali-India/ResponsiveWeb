@@ -116,11 +116,11 @@ export default function LuckyHome() {
             <SearchBox />
           </Box>
 
-          <Stack sx={{ mx: 3 }}>
+          <Stack sx={{ mx: 3, }}>
             <Typography
               variant="h5"
               gutterBottom
-              sx={{
+              sx={{display:'flex',justifyContent:'left',alignItems:'left',flexDirection:'row',
                 ml: 1,
                 fontFamily: "Roboto",
                 fontStyle: "normal",
@@ -131,8 +131,8 @@ export default function LuckyHome() {
               }}
               onClick={handleClick}
             >
-              Sew Again
-              <ArrowForwardIosIcon />
+              See Again
+              <ArrowForwardIosIcon sx={{mt:"5px"}} />
             </Typography>
             <Grid container spacing={1}>
               <ImageInCard itemData={itemData1} />
@@ -157,11 +157,11 @@ export default function LuckyHome() {
               }}
               onClick={handleClick}
             >
-              Top 10 in your country
+             Top 10 in your country
               <ArrowForwardIosIcon />
             </Typography>
             <Grid container spacing={2}>
-              <ImageInCard itemData={itemData}/>
+              <ImageInCard itemData={itemData2}/>
               {/* <ImageInCard itemData={itemData}/>
               <ImageInCard itemData={itemData}/>
               <ImageInCard itemData={itemData}/> */}
@@ -182,11 +182,11 @@ export default function LuckyHome() {
                 color: "#FFFFFF",
               }}
             >
-              Sew Again
+               Trending now
               <ArrowForwardIosIcon />
             </Typography>
             <Grid container spacing={2}>
-              <ImageInCard itemData={itemData}/>
+              <ImageInCard itemData={itemData3}/>
               {/* <ImageInCard itemData={itemData}/>
               <ImageInCard itemData={itemData}/>
               <ImageInCard itemData={itemData}/> */}
@@ -207,11 +207,11 @@ export default function LuckyHome() {
                 color: "#FFFFFF",
               }}
             >
-              Sew Again
+             Sci-fi shows
               <ArrowForwardIosIcon sx={{ pt: "-6" }} />
             </Typography>
             <Grid container spacing={2}>
-              <ImageInCard itemData={itemData}/>
+              <ImageInCard itemData={itemData4}/>
               {/* <ImageInCard itemData={itemData}/>
               <ImageInCard itemData={itemData}/>
               <ImageInCard itemData={itemData}/>
@@ -259,64 +259,90 @@ const itemData = [
   }];
   const itemData1 = [
     {
-      img: '/image20@2x.png',
+      img: '/image44@2x.png',
         title: 'Breakfast',
         body:"Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.",
     },
     {
-      img: '/image20@2x.png',
+      img: '/image45@2x.png',
         title: 'Burger',
         body:"Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.",
     },
     {
-      img: '/image20@2x.png',
+      img: '/image46@2x.png',
         title: 'Camera',
         body:"Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.",
     },
     {
-      img: '/image20@2x.png',
+      img: '/image47@2x.png',
         title: 'Coffee',
         body:"Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.",
     }];
     const itemData2 = [
       {
-        img: '/image20@2x.png',
+        img: '/11.svg',
+        img: '/image43@2x.png',
           title: 'Breakfast',
           body:"Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.",
       },
       {
-          img: 'https://images.unsplash.com/photo-1551782450-a2132b4ba21d',
+        img: '/21.svg',
+          img: '/image42@2x.png',
           title: 'Burger',
           body:"Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.",
       },
       {
-          img: 'https://images.unsplash.com/photo-1522770179533-24471fcdba45',
+        img: '/31.svg',
+          img: '/image41@2x.png',
           title: 'Camera',
           body:"Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.",
       },
       {
-          img: 'https://images.unsplash.com/photo-1444418776041-9c7e33cc5a9c',
+          img: '/41.svg',
+          img: '/image40@2x.png',
           title: 'Coffee',
           body:"Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.",
       }];
       const itemData3 = [
         {
-            img: 'https://images.unsplash.com/photo-1551963831-b3b1ca40c98e',
+            img: '/image34@2x.png',
             title: 'Breakfast',
             body:"Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.",
         },
         {
-            img: 'https://images.unsplash.com/photo-1551782450-a2132b4ba21d',
+            img: '/image37@2x.png',
             title: 'Burger',
             body:"Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.",
         },
         {
-            img: 'https://images.unsplash.com/photo-1522770179533-24471fcdba45',
+            img: '/image35@2x.png',
             title: 'Camera',
             body:"Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.",
         },
         {
-            img: 'https://images.unsplash.com/photo-1444418776041-9c7e33cc5a9c',
+            img: '/image38@2x.png',
+            title: 'Coffee',
+            body:"Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.",
+        },
+];
+      const itemData4 = [
+        {
+            img: '/image48@2x.png',
+            title: 'Breakfast',
+            body:"Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.",
+        },
+        {
+            img: '/image47@2x.png',
+            title: 'Burger',
+            body:"Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.",
+        },
+        {
+            img: '/image51@2x.png',
+            title: 'Camera',
+            body:"Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.",
+        },
+        {
+            img: '/image50@2x.png',
             title: 'Coffee',
             body:"Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.",
         },
