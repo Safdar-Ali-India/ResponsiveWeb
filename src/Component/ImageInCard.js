@@ -20,53 +20,63 @@ import KeepMountedModal from '../Component/Model1'
 
 
 const ImageInCard = (props) => {
-    console.log("props",props.itemData);
+    console.log("props", props.itemData);
     const [open, setOpen] = React.useState(false);
     const [value1, setvalue1] = React.useState('');
-  const handleOpen = () => setOpen(true);
-  const handleClose = () => setOpen(false);
-  const sendPicdata = (val)=>{
-    setvalue1(val)
-//    return  open && <KeepMountedModal val={val} setOpen={setOpen} open={open} handleOpen={handleOpen}  handleClose={handleClose} />
-  }
-   
+    const handleOpen = () => setOpen(true);
+    const handleClose = () => setOpen(false);
+    const sendPicdata = (val) => {
+        setvalue1(val)
+        //    return  open && <KeepMountedModal val={val} setOpen={setOpen} open={open} handleOpen={handleOpen}  handleClose={handleClose} />
+    }
+
     return (
         <>
 
-        {props.itemData.map((val,id)=>(
+            {props.itemData.map((val, id) => (
 
 
-        <>
-        
-        
-        
-        <Grid item xs={6} sm={4} md={3}  onClick={handleOpen}>
+                <>
 
-            <Box sx={{boxShadow:"0px 6px 12px rgba(0, 0, 0, 0.08), 0px 1px 3px rgba(0, 0, 0, 0.1)",my:1,mx:'4px', display:'flex' ,
-               borderRadius:'8px', flexDirection:'column'}}>
-            {/* <Stack   > */}
-            <Box sx={{
-                backgroundImage: `url(${val.img})`,
-                height:'160px',
-                width:'100%',
-                backgroundRepeat:'no-repeat',
-                backgroundSize: 'cover',
-                aspectRatio:'1/1'
-            }}
-            onClick={()=>sendPicdata(val)}
-            />
 
-            {/* </Stack> */}
-            <Typography variant='subtitle1' gutterBottom sx={{ml:1, color:'white'}}>{val.title}</Typography>
 
-            </Box>
-        </Grid>
+                    <Grid item xs={6} sm={4} md={2.4} onClick={handleOpen}>
 
-        </>
+                        <Box sx={{
+                            boxShadow: "0px 6px 12px rgba(0, 0, 0, 0.08), 0px 1px 3px rgba(0, 0, 0, 0.1)", my: 1, mx: '4px', display: 'flex',
+                            borderRadius: '8px', flexDirection: 'column'
+                        }}>
+                            {/* <Stack   > */}
+                            <Box sx={{
+                                backgroundImage: `url(${val.img})`,
+                                height: '160px',
+                                width: '100%',
+                                backgroundRepeat: 'no-repeat',
+                                backgroundSize: 'cover',
+                                aspectRatio: '1/1'
+                            }}
+                                onClick={() => sendPicdata(val)}
+                            />
 
-))}
-{open && <KeepMountedModal val={value1} setOpen={setOpen} open={open} handleOpen={handleOpen}  handleClose={handleClose} />}
-        
+                            {/* </Stack> */}
+                            <Typography variant='subtitle1' gutterBottom sx={{
+                                fontFamily: 'Inter',
+                                fontStyle: 'normal',
+                                fontWeight: '700',
+                                fontSize: '16px',
+                                lineHeight: '19px',
+                                textAlign: 'left',
+                                color: '#FFFFFF',
+                            }}>{val.title}</Typography>
+
+                        </Box>
+                    </Grid>
+
+                </>
+
+            ))}
+            {open && <KeepMountedModal val={value1} setOpen={setOpen} open={open} handleOpen={handleOpen} handleClose={handleClose} />}
+
         </>
 
 

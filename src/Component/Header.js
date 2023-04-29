@@ -29,6 +29,8 @@ import Avatar from '@mui/material/Avatar';
 import AdbIcon from '@mui/icons-material/Adb';
 import SwipeableTemporaryDrawer from './Drawer/LeftDrawer';
 
+import { useNavigate } from "react-router-dom";
+
 
 import SwipeableDrawer from '@mui/material/SwipeableDrawer';
 import List from '@mui/material/List';
@@ -47,7 +49,7 @@ const pages = [
   {
     type: "DropDown",
     name: "New York",
-    city: ["Delhi", "Banglore", "Bihar"]
+    city: ["New York", "Banglore", "Bihar"]
   },
   {
     type: "DropDown",
@@ -64,6 +66,7 @@ const pages = [
 
 function Header() {
 
+  const navigate = useNavigate();
   const isMobile = useMediaQuery("(max-width: 600px)");
 
   const [anchorElNav, setAnchorElNav] = React.useState(null);
@@ -93,7 +96,7 @@ function Header() {
   });
 
   const toggleDrawer = (anchor, open) => (event) => {
-    console.log("--------------------");
+   
     if (
       event &&
       event.type === 'keydown' &&
@@ -104,6 +107,12 @@ function Header() {
 
     setState({ ...state, [anchor]: open });
   };
+  const navigatefromright=(text)=>{
+    
+    if(text==='Logout'){
+      navigate("/signup");
+    }
+  }
 
   const list = (anchor) => (
     <Box
@@ -124,12 +133,12 @@ function Header() {
 
           <List  >
             {settings.map((text, index) => (
-              <ListItem key={text} disablePadding>
-                <ListItemButton >
+              <ListItem key={text} disablePadding >
+                <ListItemButton onClick={()=>navigatefromright(text)}>
                   <ListItemIcon >
                     {index % 2 === 0 ? <InboxIcon /> : <MailIcon />}
                   </ListItemIcon>
-                  <ListItemText primary={text}   />
+                  <ListItemText primary={text}    />
                 </ListItemButton>
               </ListItem>
             ))}
@@ -282,9 +291,9 @@ function Header() {
                   </SwipeableDrawer>
                 </React.Fragment>
               )
-                : settings.map((setting) => (
-                  <MenuItem key={setting} onClick={handleCloseUserMenu}  >
-                    <Typography textAlign="center">{setting}</Typography>
+                : settings.map((text) => (
+                  <MenuItem key={text} onClick={()=>navigatefromright(text)}  >
+                    <Typography textAlign="center">{text}</Typography>
                   </MenuItem>
                 ))
 

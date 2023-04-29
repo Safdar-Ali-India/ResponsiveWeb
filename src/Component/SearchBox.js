@@ -14,7 +14,7 @@ import SearchIcon from '@mui/icons-material/Search';
 export default function SearchBox() {
   return (
     <Paper
-      component="form"
+      component="form" xs={6}
       sx={{ p: '2px 4px', display: 'flex', alignItems: 'center', width: '469px' }}
     >
       <IconButton sx={{ p: '10px' }} aria-label="menu">
