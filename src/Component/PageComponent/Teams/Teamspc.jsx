@@ -82,8 +82,8 @@ const Teamspc = () => {
                         <Grid item xs={12} sm={6} md={7} sx={{ display: { xs: 'none', md: 'block' }, backgroundColor: '#00ffff' }}>
                             <Box sx={{
                                 backgroundImage: `url(${dornment})`,
-                                height: '90%',
-                                width: '100%',
+                                width: '750px',
+                                height: '563px',
                                 backgroundRepeat: 'no-repeat',
                                 backgroundSize: 'cover',
                                 aspectRatio: '1/1'

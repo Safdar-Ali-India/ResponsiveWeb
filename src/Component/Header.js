@@ -47,14 +47,14 @@ const settings = ['Profile', 'Account', 'Dashboard', 'Logout'];
 
 const pages = [
   {
-    type: "DropDown",
+    type: "TextButton",
     name: "New York",
-    city: ["New York", "Banglore", "Bihar"]
+    
   },
   {
-    type: "DropDown",
+    type: "TextButton",
     name: "Explor",
-    city: ["Delhi", "Banglore", "Bihar"]
+    
   },
   {
     type: "Button",

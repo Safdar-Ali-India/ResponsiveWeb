@@ -3,7 +3,8 @@ import Button from '@mui/material/Button';
 import Menu from '@mui/material/Menu';
 import MenuItem from '@mui/material/MenuItem';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
-import { useNavigate } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
+import ExpandLessIcon from '@mui/icons-material/ExpandLess';
 
 export default function DroupDown({page}) {
   const navigate = useNavigate();
@@ -20,66 +21,50 @@ export default function DroupDown({page}) {
   const gotoTeams=()=>{
     navigate("/team");
   }
-  const handlenavigate=(val)=>{
-    if(val==="New York"){
+  // const handlenavigate=(val)=>{
+  //   if(val==="New York"){
+  //     navigate("/city");
+  //   }
+  //   if(val==="Explor"){
+  //     navigate("/explore");
+  //   }
+  // }
 
-      navigate("/city");
-    }
-  }
+  const loaction = useLocation().pathname
+  console.log("loaction",loaction)
 
 
   return (
     <div style={{backgroundColor:'#1B2330'}} >
-        {page.type === 'DropDown' && (
+        {page.name === 'New York' && (
             <>
             
-      <Button
-        id="demo-positioned-button"
-        aria-controls={open ? 'demo-positioned-menu' : undefined}
-        aria-haspopup="true"
-        aria-expanded={open ? 'true' : undefined}
-        onClick={handleClick}
-        sx={{fontFamily: 'Open Sans',
+            <Button variant="text" onClick={()=>navigate("/city")} sx={{fontFamily: 'Open Sans',
             fontStyle: 'normal',
             fontWeight: '600',
             fontSize: '14px',
             lineHeight: '20px',
-            color: '#FFFFFF', backgroundColor:'#1B2330'}}
-        // style={{color:'white', backgroundColor: '#1B2330'}}
-      >
-        {page.name} 
-        <ExpandMoreIcon style={{backgroundColor:'#1B2330'}} />
-      </Button>
-      <Menu 
-        id="demo-positioned-menu"
-        aria-labelledby="demo-positioned-button"
-        anchorEl={anchorEl}
-        open={open}
-        onClose={handleClose}
-        anchorOrigin={{
-          vertical: 'top',
-          horizontal: 'left',
-        }}
-        transformOrigin={{
-          vertical: 'top',
-          horizontal: 'left',
-        }}
-        style={{backgroundColor:'#1B2330'}}
-        >
-          {page.city.map((val,id)=>(
-
-            <MenuItem onClick={()=>handlenavigate(val)}  
-            sx={{fontFamily: 'Open Sans',
+            color: '#FFFFFF',
+            backgroundColor:'#1B2330',
+            ml:4,
+           
+           }}
+            >New York {loaction === '/city' ? <ExpandLessIcon /> : <ExpandMoreIcon/> }</Button>
+            </>
+        )}
+        {page.name === 'Explor' && (
+            <>
+            
+            <Button variant="text" onClick={()=>navigate("/explore")} sx={{fontFamily: 'Open Sans',
             fontStyle: 'normal',
             fontWeight: '600',
             fontSize: '14px',
             lineHeight: '20px',
-            color: '#FFFFFF'}}
-            style={{backgroundColor:'#1B2330'}}
-             >{val}</MenuItem>
-          ))}
-        
-      </Menu>
+            color: '#FFFFFF',
+            backgroundColor:'#1B2330',
+           
+           }}
+            >Explor {loaction === '/explore' ? <ExpandLessIcon />  : <ExpandMoreIcon/> }</Button>
             </>
         )}
         {page.type === 'Button' && (
@@ -94,7 +79,7 @@ export default function DroupDown({page}) {
             border: '1px solid #FFFFFF',
             borderRadius: '8px'
            }}
-            >{page.name}</Button>
+            > {page.name}</Button>
             
             </>
         )}
